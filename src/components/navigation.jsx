@@ -18,8 +18,13 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
-            Letsogankwe Capital
-          </a>{" "}
+            <div style={{ lineHeight: "1.1", textAlign: "center" }}>
+              <div>The Capital Community</div>
+              <small style={{ fontSize: "10px", opacity: 0.7 }}>
+                By Letsogankwe Business Solutions
+              </small>
+            </div>
+          </a>
         </div>
 
         <div

@@ -18,23 +18,24 @@ export const Contact = (props) => {
   
   
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name, email, message);
-    
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
-      .then(
-        (result) => {
-          console.log(result.text);
-          clearState();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+  e.preventDefault();
+  console.log(name, email, message);
+
+  // Replace below with your own Service ID, Template ID and Public Key from your EmailJS account
+
+  emailjs
+    .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
+    .then(
+      (result) => {
+        console.log(result.text);
+        clearState();
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+};
+
   return (
     <div>
       <div id="contact">
@@ -153,10 +154,8 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
+            &copy; 2025 Letsogankwe Business Solutions
+            
           </p>
         </div>
       </div>
