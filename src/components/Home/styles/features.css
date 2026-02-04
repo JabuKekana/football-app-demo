@@ -1,0 +1,57 @@
+.features {
+  padding: 64px 0;
+}
+
+.section-title {
+  max-width: 900px;
+  margin: 0 auto 28px;
+  padding: 0 12px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.feature-card {
+  padding: 18px 14px;
+  border-radius: 12px;
+}
+
+.feature-card i {
+  font-size: 34px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.feature-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Small phones to tablets: 2 columns */
+@media (min-width: 480px) {
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablets and up: 3 columns */
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

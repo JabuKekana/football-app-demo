@@ -1,6 +1,5 @@
-// components/community-preview.jsx
 import React, { useState } from "react";
-import "./community-preview.css";
+import "./styles/community-preview.css";
 
 export const CommunityPreview = () => {
   const [topics, setTopics] = useState([

@@ -1,8 +1,9 @@
 import React from "react";
+import "./styles/services.css";
 
 export const Services = (props) => {
   return (
-    <div id="services" className="text-center">
+    <div id="services" className="text-center services">
       <div className="container">
         <div className="section-title">
           <h2>Our Services</h2>
@@ -11,12 +12,12 @@ export const Services = (props) => {
             dapibus leonec.
           </p>
         </div>
-        <div className="row">
+
+        <div className="services-grid">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-4">
-                  {" "}
-                  <i className={d.icon}></i>
+                <div key={`${d.name}-${i}`} className="service-card">
+                  <i className={d.icon} aria-hidden="true"></i>
                   <div className="service-desc">
                     <h3>{d.name}</h3>
                     <p>{d.text}</p>

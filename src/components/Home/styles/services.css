@@ -1,0 +1,50 @@
+.services {
+  padding: 64px 0;
+}
+
+.section-title {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  padding: 0 12px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service-card {
+  padding: 18px 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.service-card i {
+  font-size: 40px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.service-desc h3 {
+  margin: 0 0 10px;
+}
+
+.service-desc p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,45 @@
+.about,
+.about * {
+  box-sizing: border-box;
+}
+
+.about {
+  padding: 64px 0;
+  overflow-x: hidden;
+}
+
+.about-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Add this to prevent horizontal overflow */
+.about-content {
+  min-width: 0;
+  word-wrap: break-word;
+}
+
+.about-text h2,
+.about-text h3,
+.about-text p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Add more responsive breakpoints */
+@media (max-width: 480px) {
+  .about {
+    padding: 48px 0;
+  }
+  
+  .about-container {
+    padding: 0 12px;
+  }
+  
+  .about-lists {
+    grid-template-columns: 1fr;
+  }
+}

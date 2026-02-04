@@ -1,0 +1,63 @@
+.site-header {
+  width: 100%;
+}
+
+.intro {
+  min-height: 100vh;
+  display: flex;
+}
+
+.overlay {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 64px 16px;
+}
+
+.container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-text {
+  width: min(800px, 100%);
+  text-align: center;
+}
+
+.intro-text h1 {
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  word-break: break-word;
+}
+
+.intro-text p {
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.btn.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 48px 12px;
+  }
+
+  .btn.btn-custom {
+    width: 100%;
+  }
+}
