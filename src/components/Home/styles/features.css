@@ -1,22 +1,40 @@
-.features {
-  padding: 64px 0;
+.features,
+.features * {
+  box-sizing: border-box;
 }
 
-.section-title {
+.features {
+  padding: 64px 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.features-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.features .section-title {
   max-width: 900px;
   margin: 0 auto 28px;
   padding: 0 12px;
+  min-width: 0;
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
+  width: 100%;
 }
 
 .feature-card {
   padding: 18px 14px;
   border-radius: 12px;
+  width: 100%;
+  min-width: 0;
 }
 
 .feature-card i {
@@ -28,11 +46,14 @@
 .feature-card h3 {
   margin: 0 0 8px;
   font-size: 18px;
+  overflow-wrap: break-word;
 }
 
 .feature-card p {
   margin: 0;
   line-height: 1.6;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Small phones to tablets: 2 columns */
@@ -53,5 +74,16 @@
 @media (min-width: 992px) {
   .features-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Extra small devices: slightly tighter padding */
+@media (max-width: 360px) {
+  .features-container {
+    padding: 0 12px;
+  }
+
+  .feature-card {
+    padding: 16px 12px;
   }
 }

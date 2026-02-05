@@ -2,11 +2,13 @@
   width: 100%;
 }
 
+/* Main navbar row */
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 56px;
+  flex-wrap: wrap; /* key: allows menu to drop to next line on mobile */
 }
 
 .brand {
@@ -37,6 +39,7 @@
   padding: 10px;
 }
 
+/* Desktop: menu visible and aligned right */
 .nav-collapse {
   display: flex;
   align-items: center;
@@ -50,33 +53,54 @@
   list-style: none;
 }
 
+/* Neutralize bootstrap float/margins that can push things weirdly */
+.nav-links,
+.nav-links > li {
+  float: none;
+}
+
+.nav-links > li {
+  margin: 0;
+}
+
 /* Mobile */
 @media (max-width: 767px) {
-  .brand-text {
-    text-align: center;
-  }
-
   .brand {
     max-width: calc(100% - 56px);
   }
 
+  .brand-text {
+    text-align: center;
+  }
+
+  /* hide menu until opened */
   .nav-collapse {
     display: none;
     width: 100%;
+    order: 3; /* ensure it sits below brand + toggle */
   }
 
   .nav-collapse.open {
     display: block;
   }
 
+  /* stack links */
   .nav-links {
     flex-direction: column;
     gap: 0;
     padding: 12px 0;
+    width: 100%;
+  }
+
+  /* IMPORTANT: override bootstrap nav li float behavior on mobile */
+  .nav-links,
+  .nav-links > li {
+    float: none !important;
   }
 
   .nav-links a {
     display: block;
     padding: 12px 0;
+    width: 100%;
   }
 }

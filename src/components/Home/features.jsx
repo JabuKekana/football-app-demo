@@ -3,8 +3,8 @@ import "./styles/features.css";
 
 export const Features = (props) => {
   return (
-    <div id="features" className="text-center features">
-      <div className="container">
+    <section id="features" className="text-center features">
+      <div className="features-container">
         <div className="section-title">
           <h2>Features</h2>
         </div>
@@ -21,6 +21,6 @@ export const Features = (props) => {
             : "Loading..."}
         </div>
       </div>
-    </div>
+    </section>
   );
 };

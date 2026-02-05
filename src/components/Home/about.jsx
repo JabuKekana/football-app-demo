@@ -19,17 +19,13 @@ export const About = (props) => {
               <div className="about-lists">
                 <ul>
                   {props.data
-                    ? props.data.Why.map((d, i) => (
-                        <li key={`${d}-${i}`}>{d}</li>
-                      ))
+                    ? props.data.Why.map((d, i) => <li key={`${d}-${i}`}>{d}</li>)
                     : "loading"}
                 </ul>
 
                 <ul>
                   {props.data
-                    ? props.data.Why2.map((d, i) => (
-                        <li key={`${d}-${i}`}>{d}</li>
-                      ))
+                    ? props.data.Why2.map((d, i) => <li key={`${d}-${i}`}>{d}</li>)
                     : "loading"}
                 </ul>
               </div>

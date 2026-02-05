@@ -1,10 +1,17 @@
+.site-header,
+.site-header * {
+  box-sizing: border-box;
+}
+
 .site-header {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .intro {
   min-height: 100vh;
   display: flex;
+  width: 100%;
 }
 
 .overlay {
@@ -14,25 +21,33 @@
   padding: 64px 16px;
 }
 
-.container {
-  width: min(1100px, 100%);
+.header-container {
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 16px;
+  min-width: 0;
 }
 
-.row {
+.header-row {
   display: flex;
   justify-content: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .intro-text {
-  width: min(800px, 100%);
+  width: 100%;
+  max-width: 800px;
   text-align: center;
+  min-width: 0;
 }
 
 .intro-text h1 {
   font-size: clamp(28px, 5vw, 56px);
   line-height: 1.1;
   margin: 0 0 16px;
+  overflow-wrap: anywhere;
   word-break: break-word;
 }
 
@@ -40,6 +55,8 @@
   font-size: clamp(16px, 2.2vw, 20px);
   line-height: 1.6;
   margin: 0 0 24px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .btn.btn-custom {
@@ -55,6 +72,10 @@
 @media (max-width: 480px) {
   .overlay {
     padding: 48px 12px;
+  }
+
+  .header-container {
+    padding: 0 12px;
   }
 
   .btn.btn-custom {

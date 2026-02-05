@@ -6,8 +6,8 @@ export const Header = (props) => {
     <header id="header" className="site-header">
       <div className="intro">
         <div className="overlay">
-          <div className="container">
-            <div className="row">
+          <div className="header-container">
+            <div className="header-row">
               <div className="intro-text">
                 <h1>
                   {props.data ? props.data.title : "Loading"}
