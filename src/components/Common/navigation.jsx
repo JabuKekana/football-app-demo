@@ -2,6 +2,9 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./styles/navigation.css";
 
+// IMPORT THE LOGO PROPERLY
+import logo from "../../Assets/official_logo.png";
+
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -11,12 +14,13 @@ export const Navigation = () => {
 
   const links = useMemo(
     () => [
+      { to: "/", label: "Home" },
       { to: "/#community", label: "Community" },
       { to: "/#about", label: "About" },
       { to: "/#services", label: "Services" },
       { to: "/#contact", label: "Contact" },
     ],
-    []
+    [],
   );
 
   useEffect(() => {
@@ -36,19 +40,31 @@ export const Navigation = () => {
     };
   }, []);
 
-  // Close mobile menu whenever route changes
   useEffect(() => {
     closeMenu();
   }, [location.pathname, location.hash]);
 
   return (
-    <nav className={`nav ${scrolled ? "isScrolled" : ""}`} id="menu" aria-label="Primary">
+    <nav
+      className={`nav ${scrolled ? "isScrolled" : ""}`}
+      id="menu"
+      aria-label="Primary"
+    >
       <div className="nav__container">
-        {/* Brand always goes to landing page */}
         <Link className="nav__brand" to="/" onClick={closeMenu}>
+          <div className="nav__logo-container">
+            <img
+              src={logo}
+              alt="The Capital Community Logo"
+              className="nav__logo"
+            />
+          </div>
+
           <div className="nav__brandText">
             <div className="nav__brandTitle">The Capital Community</div>
-            <small className="nav__brandSub">By Letsogankwe Business Solutions</small>
+            <small className="nav__brandSub">
+              By Letsogankwe Business Solutions
+            </small>
           </div>
         </Link>
 
@@ -77,7 +93,7 @@ export const Navigation = () => {
           </ul>
 
           <div className="nav__cta">
-            <Link className="nav__button" to="/auth" onClick={closeMenu}>
+            <Link className="nav__button" to="/auth-selection" onClick={closeMenu}>
               Apply For Free
             </Link>
           </div>

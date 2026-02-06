@@ -482,7 +482,7 @@ export const LoanApplication = () => {
             {savedMsg ? <p className="dashStatus" role="status">{savedMsg}</p> : null}
 
             <div className="dashLinks">
-              <a className="dashLink" href="/auth/login">
+              <a className="dashLink" href="/login">
                 Login
               </a>
               <span className="dashDot" aria-hidden="true" />

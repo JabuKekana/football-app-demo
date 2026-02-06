@@ -211,22 +211,43 @@
 .devNote {
   width: min(900px, 100%);
   margin-top: 18px;
-  padding: 12px 14px;
-  border-radius: 18px;
+  padding: 20px;
+  border-radius: var(--dev-radius-lg);
   border: 1px solid rgba(106, 215, 255, 0.22);
   background: rgba(106, 215, 255, 0.08);
   color: rgba(255, 255, 255, 0.82);
 }
 
-.devNote__pill {
-  display: inline-flex;
-  padding: 6px 10px;
+.devNote__content {
+  display: grid;
+  gap: 14px;
+}
+
+.devNote__updates {
+  margin-top: 6px;
+}
+
+.devNote__badge {
+  display: inline-block;
+  padding: 6px 12px;
   border-radius: 999px;
-  margin-left: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.92);
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.devNote__list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.devNote__list li {
+  padding-left: 4px;
 }
 
 /* Responsive */
@@ -256,6 +277,14 @@
 
   .devListItem__path {
     width: fit-content;
+  }
+  
+  .devNote {
+    padding: 16px;
+  }
+  
+  .devNote__list {
+    padding-left: 16px;
   }
 }
 

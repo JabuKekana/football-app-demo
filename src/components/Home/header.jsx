@@ -11,7 +11,7 @@ export const Header = (props) => {
       <div className="header__container">
         <div className="header__content">
           <div className="header__badge" aria-hidden="true">
-            Finance Platform
+            Welcome
           </div>
 
           <h1 className="header__title">

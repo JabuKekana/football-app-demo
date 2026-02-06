@@ -1,49 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Navigation } from "./components/Common/navigation";
-import { ScrollToHash } from "./components/Common/ScrollToHash";
-import { Header } from "./components/Home/header";
-import { CommunityPreview } from "./components/Home/community-preview";
-import { Features } from "./components/Home/features";
-import { About } from "./components/Home/about";
-import { Services } from "./components/Home/services";
-import { Contact } from "./components/Home/contact";
+import { Navigation } from "./Components/Common/Navigation.jsx";
+import { ScrollToHash } from "./Components/Common/ScrollToHash.jsx";
+import { Header } from "./Components/Home/Header.jsx";
+import { CommunityPreview } from "./Components/Home/CommunityPreview.jsx";
+import { Features } from "./Components/Home/Features.jsx";
+import { About } from "./Components/Home/About.jsx";
+import { Services } from "./Components/Home/Services.jsx";
+import { Contact } from "./Components/Home/Contact.jsx";
 
-import { FAQ } from "./components/Info/FAQ";
-import { Terms } from "./components/Info/Terms";
-import { Privacy } from "./components/Info/Privacy";
+import { FAQ } from "./Components/Info/FAQ.jsx";
+import { Terms } from "./Components/Info/Terms.jsx";
+import { Privacy } from "./Components/Info/Privacy.jsx";
 
-import { DevPages } from "./components/Dev/DevPages";
+import { DevPages } from "./Components/Dev/DevPages.jsx";
 
 // Auth
-import { AuthStart } from "./components/Auth/AuthStart";
-import { AccountType } from "./components/Auth/AccountType";
-import { RegisterBorrower } from "./components/Auth/RegisterBorrower";
-import { RegisterInvestor } from "./components/Auth/RegisterInvestor";
-import { Login } from "./components/Auth/Login";
-import { ForgotPassword } from "./components/Auth/ForgotPassword";
-import { ResetPassword } from "./components/Auth/ResetPassword";
+import { AuthSelection } from "./Components/Auth/AuthSelection.jsx";
+import { RegisterBorrower } from "./Components/Auth/RegisterBorrower.jsx";
+import { RegisterInvestor } from "./Components/Auth/RegisterInvestor.jsx";
+import { Login } from "./Components/Auth/Login.jsx";
+import { ForgotPassword } from "./Components/Auth/ForgotPassword.jsx";
+import { ResetPassword } from "./Components/Auth/ResetPassword.jsx";
 
 // Borrower
-import { BorrowerDashboard } from "./components/Borrower/BorrowerDashboard";
-import { BorrowerProfile } from "./components/Borrower/BorrowerProfile";
-import { LoanApplication } from "./components/Borrower/LoanApplication";
+import { BorrowerDashboard } from "./Components/Borrower/BorrowerDashboard.jsx";
+import { BorrowerProfile } from "./Components/Borrower/BorrowerProfile.jsx";
+import { LoanApplication } from "./Components/Borrower/LoanApplication.jsx";
 
 // Investor
-import { InvestorMarketplace } from "./components/Investor/InvestorMarketplace";
-import { InvestorPortfolio } from "./components/Investor/InvestorPortfolio.jsx";
-import { InvestorProfile } from "./components/Investor/InvestorProfile";
-import { InvestmentCommitment } from "./components/Investor/InvestmentCommitment";
+import { InvestorMarketplace } from "./Components/Investor/InvestorMarketplace.jsx";
+import { InvestorPortfolio } from "./Components/Investor/InvestorPortfolio.jsx";
+import { InvestorProfile } from "./Components/Investor/InvestorProfile.jsx";
+import { InvestmentCommitment } from "./Components/Investor/InvestmentCommitment.jsx";
 
 // Messaging + KYC
-import { MessagingCenter } from "./components/Messages/MessagingCenter";
-import { KycVerification } from "./components/KYC/KycVerification";
+import { MessagingCenter } from "./Components/Messages/MessagingCenter.jsx";
+import { KycVerification } from "./Components/KYC/KycVerification.jsx";
 
 // Admin
-import { AdminReviewLoan } from "./components/Admin/AdminReviewLoan";
-import { UserManagement } from "./components/Admin/UserManagement";
-import { PlatformSettings } from "./components/Admin/PlatformSettings";
+import { AdminReviewLoan } from "./Components/Admin/AdminReviewLoan.jsx";
+import { UserManagement } from "./Components/Admin/UserManagement.jsx";
+import { PlatformSettings } from "./Components/Admin/PlatformSettings.jsx";
 
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
@@ -91,8 +90,7 @@ const App = () => {
           <Route path="/privacy" element={<Privacy />} />
 
           {/* Auth */}
-          <Route path="/auth" element={<AuthStart />} />
-          <Route path="/account-type" element={<AccountType />} />
+          <Route path="/auth-selection" element={<AuthSelection />} />
           <Route path="/register/borrower" element={<RegisterBorrower />} />
           <Route path="/register/investor" element={<RegisterInvestor />} />
           <Route path="/login" element={<Login />} />

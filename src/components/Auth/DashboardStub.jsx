@@ -1,5 +1,3 @@
-// Optional: quick placeholders so the demo "proceeds" cleanly (use now, replace later)
-// pages/Placeholders/DashboardStub.jsx
 import React from "react";
 import "../Auth/styles/auth-pages.css";
 
@@ -27,7 +25,7 @@ export const DashboardStub = ({ title = "Dashboard" }) => {
                 <a className="authBtn" href="/">
                   Return home
                 </a>
-                <a className="authBtn authBtn--outline" href="/auth/account-type">
+                <a className="authBtn authBtn--outline" href="/account-type">
                   Create another account
                 </a>
               </div>

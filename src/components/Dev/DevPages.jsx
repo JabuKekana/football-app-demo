@@ -23,8 +23,7 @@ export const DevPages = () => {
       {
         title: "Auth Flow",
         items: [
-          { label: "Auth Start", to: "/auth" },
-          { label: "Account Type", to: "/account-type" },
+          { label: "Auth Selection", to: "/auth/selection" },
           { label: "Borrower Registration", to: "/register/borrower" },
           { label: "Investor Registration", to: "/register/investor" },
           { label: "Login", to: "/login" },
@@ -108,7 +107,17 @@ export const DevPages = () => {
           </div>
 
           <div className="devNote">
-            Note: This is only for review, It will not be available to the public.
+            <div className="devNote__content">
+              <strong>Note:</strong> This is a development-only tool for reviewing pages. It will not be available to the public.
+              <div className="devNote__updates">
+                <span className="devNote__badge">Recent Updates</span>
+                <ul className="devNote__list">
+                  <li>Merged "Auth Start" and "Account Type" into single "Auth Selection" page</li>
+                  <li>Removed redundant "/account-type" page from auth flow</li>
+                  <li>Streamlined user journey with one-step path selection</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>

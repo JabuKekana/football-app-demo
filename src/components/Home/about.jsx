@@ -8,6 +8,9 @@ export const About = (props) => {
 
   return (
     <section className="about" id="about" aria-labelledby="about-title">
+      {/* Add background image div */}
+      <div className="about__bg" />
+      
       <div className="about__container">
         <div className="about__grid">
           <aside className="about__panel" aria-hidden="true">

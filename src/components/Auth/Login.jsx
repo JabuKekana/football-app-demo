@@ -1,4 +1,3 @@
-// pages/Auth/Login.jsx
 import React, { useMemo, useState } from "react";
 import "./styles/auth-pages.css";
 
@@ -97,7 +96,7 @@ export const Login = () => {
                 <button className="authBtn" type="submit">
                   Login
                 </button>
-                <a className="authBtn authBtn--outline" href="/auth/account-type">
+                <a className="authBtn authBtn--outline" href="/auth-selection">
                   Create an account
                 </a>
               </div>

@@ -1,4 +1,3 @@
-// pages/Auth/RegisterBorrower.jsx
 import React, { useMemo, useState } from "react";
 import "./styles/auth-pages.css";
 
@@ -296,7 +295,7 @@ export const RegisterBorrower = () => {
 
             <div className="auth__row">
               <span className="auth__muted">Already have an account?</span>
-              <a className="auth__link" href="/auth/login">
+              <a className="auth__link" href="/login">
                 Login
               </a>
             </div>
