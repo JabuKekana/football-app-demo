@@ -1,0 +1,501 @@
+/* pages/Borrower/styles/dashboard-pages.css */
+/* Use this same file for both Borrower and Investor pages */
+
+:root {
+  --blue: #6ad7ff;
+  --blue-2: #2fb8ff;
+  --ink: #0b0f14;
+  --white: #ffffff;
+
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-2: rgba(255, 255, 255, 0.12);
+  --stroke: rgba(255, 255, 255, 0.16);
+
+  --radius-lg: 22px;
+  --radius-md: 16px;
+
+  --max: 980px;
+  --maxWide: 1180px;
+  --pad: 24px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.dash {
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 520px at 15% 25%, rgba(106, 215, 255, 0.08), transparent 62%),
+    radial-gradient(780px 520px at 90% 80%, rgba(47, 184, 255, 0.06), transparent 62%),
+    linear-gradient(180deg, #0b0f14 0%, #070a0f 100%);
+  color: var(--white);
+  font-family: var(--font-sans);
+}
+
+.dash__hero {
+  position: relative;
+  padding: clamp(92px, 9vw, 128px) 0 clamp(70px, 7vw, 100px);
+  overflow: hidden;
+}
+
+.dash__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 30%),
+    radial-gradient(900px 450px at 20% 0%, rgba(255, 255, 255, 0.06), transparent 60%);
+  pointer-events: none;
+}
+
+.dash__container {
+  width: min(var(--maxWide), 100%);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  position: relative;
+  z-index: 1;
+}
+
+.dash__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.9rem;
+}
+
+.dash__kicker::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, var(--blue), var(--blue-2));
+  box-shadow: 0 0 0 5px rgba(106, 215, 255, 0.16);
+}
+
+.dash__title {
+  margin: 14px 0 0;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  max-width: 28ch;
+}
+
+.dash__lead {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+  max-width: 74ch;
+}
+
+/* Steps */
+.dashSteps {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashStep {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.dashStep.isOn {
+  background: rgba(106, 215, 255, 0.14);
+  border-color: rgba(106, 215, 255, 0.30);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Cards */
+.dashCard {
+  width: min(var(--max), 100%);
+  margin-top: 22px;
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+}
+
+.dashCard__title {
+  margin: 0 0 12px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  font-size: 1.15rem;
+}
+
+/* Layout helpers */
+.dashSplit {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.dashGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.dashField {
+  display: grid;
+  gap: 8px;
+}
+
+.dashField--full {
+  grid-column: 1 / -1;
+}
+
+.dashLabel {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.dashInput,
+.dashSelect,
+.dashTextarea {
+  width: 100%;
+  border-radius: 14px;
+  padding: 12px 12px;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.dashTextarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.dashInput::placeholder,
+.dashTextarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.dashInput:focus,
+.dashSelect:focus,
+.dashTextarea:focus {
+  border-color: rgba(106, 215, 255, 0.5);
+  box-shadow: 0 0 0 4px rgba(106, 215, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dashFile {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.dashHint {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* Amount input */
+.dashAmount {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dashAmount__suffix {
+  position: absolute;
+  right: 12px;
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 0.92rem;
+}
+
+.dashRange {
+  width: 100%;
+  accent-color: var(--blue-2);
+}
+
+/* Toggles and checks */
+.dashToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.dashCheck {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.dashCheck input,
+.dashToggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue-2);
+}
+
+/* Chips */
+.dashChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dashChip {
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.dashChip:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(106, 215, 255, 0.20);
+}
+
+.dashChip.isOn {
+  background: rgba(106, 215, 255, 0.14);
+  border-color: rgba(106, 215, 255, 0.30);
+}
+
+/* Notice + Summary */
+.dashNotice {
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  margin-bottom: 8px;
+}
+
+.dashNotice__title {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.dashNotice__text {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.dashSummary {
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.dashSummary__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.dashSummary__row + .dashSummary__row {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Actions */
+.dashActions {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dashActions__right {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dashBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  color: rgba(11, 15, 20, 0.92);
+  background: linear-gradient(180deg, rgba(106, 215, 255, 0.98), rgba(47, 184, 255, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 14px 44px rgba(47, 184, 255, 0.18);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.dashBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 62px rgba(47, 184, 255, 0.26);
+  filter: brightness(1.02);
+}
+
+.dashBtn--outline {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.dashBtn--outline:hover {
+  border-color: rgba(106, 215, 255, 0.28);
+}
+
+.dashBtn--ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dashBtn--ghost:hover {
+  border-color: rgba(106, 215, 255, 0.22);
+}
+
+.dashBtn:focus-visible,
+.dashLink:focus-visible {
+  outline: 3px solid rgba(106, 215, 255, 0.7);
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
+.dashStatus {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.dashStatus.isSuccess {
+  border-color: rgba(106, 215, 255, 0.35);
+  background: rgba(106, 215, 255, 0.10);
+}
+
+/* Footer links inside card */
+.dashLinks {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.dashLink {
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 4px 2px;
+  border-radius: 8px;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.dashLink:hover {
+  border-bottom-color: rgba(106, 215, 255, 0.55);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.dashDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Team rows */
+.dashDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.10);
+  margin: 16px 0;
+}
+
+.dashTeam {
+  display: grid;
+  gap: 12px;
+}
+
+.dashTeam__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashSplit {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --pad: 18px;
+  }
+
+  .dashGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashTeam__row {
+    grid-template-columns: 1fr;
+  }
+
+  .dashActions,
+  .dashActions__right {
+    width: 100%;
+  }
+
+  .dashBtn {
+    width: 100%;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dashBtn,
+  .dashLink,
+  .dashChip {
+    transition: none;
+  }
+
+  .dashBtn:hover,
+  .dashLink:hover,
+  .dashChip:hover {
+    transform: none;
+  }
+}

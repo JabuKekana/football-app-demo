@@ -1,83 +1,86 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./styles/navigation.css";
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  const closeMenu = () => setOpen(false);
+
+  const links = useMemo(
+    () => [
+      { to: "/#community", label: "Community" },
+      { to: "/#about", label: "About" },
+      { to: "/#services", label: "Services" },
+      { to: "/#contact", label: "Contact" },
+    ],
+    []
+  );
 
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setOpen(false);
     };
+
+    const onScroll = () => setScrolled(window.scrollY > 10);
+
     window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
-  const closeMenu = () => setOpen(false);
+  // Close mobile menu whenever route changes
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname, location.hash]);
 
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top nav-wrap">
-      <div className="container nav-inner">
-        <a
-          className="navbar-brand page-scroll brand"
-          href="#page-top"
-          onClick={closeMenu}
-        >
-          <div className="brand-text">
-            <div className="brand-title">The Capital Community</div>
-            <small className="brand-sub">By Letsogankwe Business Solutions</small>
+    <nav className={`nav ${scrolled ? "isScrolled" : ""}`} id="menu" aria-label="Primary">
+      <div className="nav__container">
+        {/* Brand always goes to landing page */}
+        <Link className="nav__brand" to="/" onClick={closeMenu}>
+          <div className="nav__brandText">
+            <div className="nav__brandTitle">The Capital Community</div>
+            <small className="nav__brandSub">By Letsogankwe Business Solutions</small>
           </div>
-        </a>
+        </Link>
 
         <button
+          className={`nav__toggle ${open ? "isOpen" : ""}`}
           type="button"
-          className={`navbar-toggle ${open ? "" : "collapsed"} nav-toggle`}
           aria-controls="nav-links"
           aria-expanded={open}
           aria-label="Toggle navigation"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-          <span className="icon-bar" />
+          <span className="nav__bar" />
+          <span className="nav__bar" />
+          <span className="nav__bar" />
         </button>
 
-        <div className={`nav-collapse ${open ? "open" : ""}`} id="nav-links">
-          <ul className="nav navbar-nav nav-links">
-            <li>
-              <a href="#community" className="page-scroll" onClick={closeMenu}>
-                Community
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="page-scroll" onClick={closeMenu}>
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="page-scroll" onClick={closeMenu}>
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#portfolio" className="page-scroll" onClick={closeMenu}>
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a
-                href="#testimonials"
-                className="page-scroll"
-                onClick={closeMenu}
-              >
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="page-scroll" onClick={closeMenu}>
-                Contact
-              </a>
-            </li>
+        <div className={`nav__links ${open ? "isOpen" : ""}`} id="nav-links">
+          <ul className="nav__list">
+            {links.map((l) => (
+              <li className="nav__item" key={l.to}>
+                <Link className="nav__link" to={l.to} onClick={closeMenu}>
+                  {l.label}
+                </Link>
+              </li>
+            ))}
           </ul>
+
+          <div className="nav__cta">
+            <Link className="nav__button" to="/auth" onClick={closeMenu}>
+              Apply For Free
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

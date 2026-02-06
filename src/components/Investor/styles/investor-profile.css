@@ -1,0 +1,297 @@
+/* components/Investor/styles/investor-profile.css */
+
+:root {
+  --invp-blue: #6ad7ff;
+  --invp-blue2: #2fb8ff;
+  --invp-white: #ffffff;
+
+  --invp-radius-lg: 22px;
+  --invp-radius-md: 16px;
+
+  --invp-max: 1180px;
+  --invp-pad: 24px;
+
+  --invp-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.invp {
+  min-height: 100vh;
+  color: var(--invp-white);
+  font-family: var(--invp-font);
+  background:
+    radial-gradient(900px 520px at 15% 25%, rgba(106, 215, 255, 0.08), transparent 62%),
+    radial-gradient(780px 520px at 90% 80%, rgba(47, 184, 255, 0.06), transparent 62%),
+    linear-gradient(180deg, #0b0f14 0%, #070a0f 100%);
+}
+
+.invp__hero {
+  position: relative;
+  padding: clamp(92px, 9vw, 128px) 0 clamp(70px, 7vw, 100px);
+  overflow: hidden;
+}
+
+.invp__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 30%),
+    radial-gradient(900px 450px at 20% 0%, rgba(255, 255, 255, 0.06), transparent 60%);
+  pointer-events: none;
+}
+
+.invp__container {
+  width: min(var(--invp-max), 100%);
+  margin: 0 auto;
+  padding: 0 var(--invp-pad);
+  position: relative;
+  z-index: 1;
+}
+
+.invp__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.9rem;
+}
+
+.invp__kicker::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, var(--invp-blue), var(--invp-blue2));
+  box-shadow: 0 0 0 5px rgba(106, 215, 255, 0.16);
+}
+
+.invp__title {
+  margin: 14px 0 0;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  max-width: 36ch;
+}
+
+.invp__lead {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+  max-width: 80ch;
+}
+
+.invpCard {
+  margin-top: 22px;
+  border-radius: var(--invp-radius-lg);
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+}
+
+.invpCard__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.invpCard__title {
+  margin: 0;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  font-size: 1.15rem;
+}
+
+.invpCard__text {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.invpDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.10);
+  margin: 16px 0;
+}
+
+.invpGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.invpField {
+  display: grid;
+  gap: 8px;
+}
+
+.invpField--full {
+  grid-column: 1 / -1;
+}
+
+.invpLabel {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.92rem;
+}
+
+.invpInput,
+.invpSelect,
+.invpTextarea {
+  width: 100%;
+  border-radius: 14px;
+  padding: 12px 12px;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.invpTextarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.invpInput::placeholder,
+.invpTextarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.invpInput:focus,
+.invpSelect:focus,
+.invpTextarea:focus {
+  border-color: rgba(106, 215, 255, 0.5);
+  box-shadow: 0 0 0 4px rgba(106, 215, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.invpChips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.invpChip {
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.invpChip:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(106, 215, 255, 0.20);
+}
+
+.invpChip.isOn {
+  background: rgba(106, 215, 255, 0.14);
+  border-color: rgba(106, 215, 255, 0.30);
+}
+
+.invpActions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.invpActions__right {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.invpBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  color: rgba(11, 15, 20, 0.92);
+  background: linear-gradient(180deg, rgba(106, 215, 255, 0.98), rgba(47, 184, 255, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 14px 44px rgba(47, 184, 255, 0.18);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.invpBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 62px rgba(47, 184, 255, 0.26);
+  filter: brightness(1.02);
+}
+
+.invpBtn--outline {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.invpBtn--ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.invpStatus {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.invpStatus.isSuccess {
+  border-color: rgba(106, 215, 255, 0.35);
+  background: rgba(106, 215, 255, 0.10);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  :root {
+    --invp-pad: 18px;
+  }
+
+  .invpGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .invpBtn {
+    width: 100%;
+  }
+
+  .invpActions__right {
+    width: 100%;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .invpBtn,
+  .invpChip {
+    transition: none;
+  }
+  .invpBtn:hover,
+  .invpChip:hover {
+    transform: none;
+  }
+}

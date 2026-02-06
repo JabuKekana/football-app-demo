@@ -2,23 +2,38 @@ import React from "react";
 import "./styles/features.css";
 
 export const Features = (props) => {
-  return (
-    <section id="features" className="text-center features">
-      <div className="features-container">
-        <div className="section-title">
-          <h2>Features</h2>
-        </div>
+  const features = props?.data ?? [];
 
-        <div className="features-grid">
-          {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.title}-${i}`} className="feature-card">
+  return (
+    <section className="features" id="features" aria-labelledby="features-title">
+      <div className="features__container">
+        <header className="features__header">
+          <div className="features__kicker">Platform Capabilities</div>
+          <h2 className="features__title" id="features-title">
+            Features
+          </h2>
+          <p className="features__lead">
+            Smart finance tools designed for speed, clarity, and confident decision making.
+          </p>
+        </header>
+
+        <div className="features__grid">
+          {features.length ? (
+            features.map((d, i) => (
+              <article className="features__card" key={`${d.title}-${i}`}>
+                <div className="features__icon">
                   <i className={d.icon} aria-hidden="true"></i>
-                  <h3>{d.title}</h3>
-                  <p>{d.text}</p>
                 </div>
-              ))
-            : "Loading..."}
+
+                <h3 className="features__card-title">{d.title}</h3>
+                <p className="features__card-text">{d.text}</p>
+
+                <div className="features__card-accent" />
+              </article>
+            ))
+          ) : (
+            "Loading..."
+          )}
         </div>
       </div>
     </section>

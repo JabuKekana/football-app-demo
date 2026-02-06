@@ -25,7 +25,7 @@ export const CommunityPreview = () => {
       },
       {
         id: 3,
-        title: "Scaling from startup to SME - Share your experience",
+        title: "Scaling from startup to SME. Share your experience",
         author: "BusinessGuru",
         likes: 65,
         comments: 23,
@@ -68,138 +68,142 @@ export const CommunityPreview = () => {
   };
 
   return (
-    <section id="community" className="cp">
-      <div className="cp__shell">
-        <div className="cp__title">
-          <h2>Business Community</h2>
-          <p>
-            Connect with fellow entrepreneurs, share experiences, and get answers
-            to your business questions.
+    <section className="cp" id="community" aria-labelledby="cp-title">
+      <div className="cp__container">
+        <header className="cp__header">
+          <div className="cp__kicker">Community</div>
+          <h2 className="cp__title" id="cp-title">
+            Business Community
+          </h2>
+          <p className="cp__lead">
+            Connect with fellow entrepreneurs, share experiences, and get answers to your business questions.
           </p>
-        </div>
+        </header>
 
-        <div className="cp__container">
-          <div className="cp__actions">
-            <div className="cp-card cp-action">
-              <div className="cp-action__icon" aria-hidden="true">
+        <div className="cp__grid">
+          <aside className="cp__left" aria-label="Community actions">
+            <div className="cp__actionCard">
+              <div className="cp__actionIcon" aria-hidden="true">
                 <i className="fa fa-users"></i>
               </div>
-              <h3>Join 500+ Entrepreneurs</h3>
-              <p>Connect with business owners in our community</p>
-              <button className="cp-btn cp-btn--primary cp-btn--block">
+              <h3 className="cp__actionTitle">Join 500+ Entrepreneurs</h3>
+              <p className="cp__actionText">Connect with business owners in our community</p>
+              <a className="cp__primaryBtn" href="/signup">
                 Create Account
-              </button>
+              </a>
             </div>
 
-            <div className="cp-card cp-action">
-              <div className="cp-action__icon" aria-hidden="true">
+            <div className="cp__actionCard cp__actionCard--alt">
+              <div className="cp__actionIcon" aria-hidden="true">
                 <i className="fa fa-comment"></i>
               </div>
-              <h3>Start a Discussion</h3>
+              <h3 className="cp__actionTitle">Start a Discussion</h3>
 
-              <form onSubmit={handlePostTopic} className="cp-form">
-                <label className="cp-sr-only" htmlFor="cp-topic">
+              <form className="cp__form" onSubmit={handlePostTopic}>
+                <label className="cp__label" htmlFor="cp-topic">
                   Post a new topic
                 </label>
 
                 <textarea
+                  className="cp__textarea"
                   id="cp-topic"
-                  className="cp-textarea"
                   placeholder="What's on your mind? Ask a question or share advice..."
                   rows={3}
                   value={newTopic}
                   onChange={(e) => setNewTopic(e.target.value)}
                 />
 
-                <button
-                  type="submit"
-                  className="cp-btn cp-btn--secondary cp-btn--block"
-                >
+                <button className="cp__secondaryBtn" type="submit">
                   Post Topic
                 </button>
               </form>
             </div>
-          </div>
+          </aside>
 
-          <div className="cp-card cp-topics">
-            <div className="cp-topics__header">
-              <h3>
+          <div className="cp__right" aria-label="Trending discussions">
+            <div className="cp__topRow">
+              <h3 className="cp__sectionTitle">
                 <i className="fa fa-fire" aria-hidden="true"></i>
                 <span>Trending Discussions</span>
               </h3>
 
-              <a href="/community" className="cp-link">
+              <a className="cp__allLink" href="/community">
                 View all <span aria-hidden="true">→</span>
               </a>
             </div>
 
-            <div className="cp-topics__list">
+            <div className="cp__topics">
               {topics.map((topic) => (
-                <article key={topic.id} className="cp-topic">
-                  <div className="cp-topic__category">{topic.category}</div>
+                <article className="cp__topic" key={topic.id}>
+                  <div className="cp__topicHead">
+                    <span className="cp__tag">{topic.category}</span>
+                  </div>
 
-                  <h4 className="cp-topic__title">{topic.title}</h4>
+                  <h4 className="cp__topicTitle">{topic.title}</h4>
 
-                  <div className="cp-topic__meta">
-                    <span className="cp-topic__metaItem">
+                  <div className="cp__meta">
+                    <span className="cp__metaItem">
                       <i className="fa fa-user" aria-hidden="true"></i>
                       <span>{topic.author}</span>
                     </span>
 
-                    <span className="cp-topic__metaItem">
+                    <span className="cp__metaItem">
                       <i className="fa fa-clock-o" aria-hidden="true"></i>
                       <span>{topic.timeAgo}</span>
                     </span>
                   </div>
 
-                  <div className="cp-topic__stats">
-                    <span className="cp-topic__stat">
+                  <div className="cp__stats">
+                    <span className="cp__stat">
                       <i className="fa fa-thumbs-up" aria-hidden="true"></i>
                       <span>{topic.likes}</span>
                     </span>
 
-                    <span className="cp-topic__stat">
+                    <span className="cp__stat">
                       <i className="fa fa-comments" aria-hidden="true"></i>
                       <span>{topic.comments}</span>
                     </span>
                   </div>
 
-                  <button className="cp-btn cp-btn--outline cp-btn--sm">
+                  <a className="cp__ghostBtn" href="/community">
                     Join Discussion
-                  </button>
+                  </a>
+
+                  <span className="cp__topicAccent" aria-hidden="true" />
                 </article>
               ))}
             </div>
 
-            <div className="cp-stats">
-              <div className="cp-stat">
-                <div className="cp-stat__num">500+</div>
-                <div className="cp-stat__label">Members</div>
+            <div className="cp__metrics" aria-label="Community metrics">
+              <div className="cp__metric">
+                <div className="cp__metricValue">500+</div>
+                <div className="cp__metricLabel">Members</div>
               </div>
-              <div className="cp-stat">
-                <div className="cp-stat__num">1.2k</div>
-                <div className="cp-stat__label">Discussions</div>
+              <div className="cp__metric">
+                <div className="cp__metricValue">1.2k</div>
+                <div className="cp__metricLabel">Discussions</div>
               </div>
-              <div className="cp-stat">
-                <div className="cp-stat__num">24/7</div>
-                <div className="cp-stat__label">Active Support</div>
+              <div className="cp__metric">
+                <div className="cp__metricValue">24/7</div>
+                <div className="cp__metricLabel">Active Support</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="cp-card cp-cta">
-          <h3>Ready to join the conversation?</h3>
-          <p>
-            Get exclusive access to industry insights, funding opportunities, and
-            expert advice.
-          </p>
+        <div className="cp__cta">
+          <div className="cp__ctaText">
+            <h3 className="cp__ctaTitle">Ready to join the conversation?</h3>
+            <p className="cp__ctaLead">
+              Get exclusive access to industry insights, funding opportunities, and expert advice.
+            </p>
+          </div>
 
-          <div className="cp-cta__buttons">
-            <a href="/community" className="cp-btn cp-btn--primary cp-btn--lg">
+          <div className="cp__ctaActions">
+            <a className="cp__ctaBtn" href="/community">
               Explore Full Community
             </a>
-            <a href="/signup" className="cp-btn cp-btn--outline cp-btn--lg">
+            <a className="cp__ctaBtn cp__ctaBtn--outline" href="/signup">
               Sign Up Free
             </a>
           </div>
