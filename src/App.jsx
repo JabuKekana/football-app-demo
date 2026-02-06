@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import { Navigation } from "./Components/Common/Navigation.jsx";
+import { Navbar } from "./Components/Common/Navbar.jsx"
 import { ScrollToHash } from "./Components/Common/ScrollToHash.jsx";
 import { Header } from "./Components/Home/Header.jsx";
 import { CommunityPreview } from "./Components/Home/CommunityPreview.jsx";
@@ -74,7 +73,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Navigation />
+        <Navbar />
         <ScrollToHash />
 
         <Routes>

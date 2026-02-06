@@ -1,11 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./styles/navigation.css";
+import "./styles/navbar.css";
 
-// IMPORT THE LOGO PROPERLY
 import logo from "../../Assets/official_logo.png";
 
-export const Navigation = () => {
+export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
