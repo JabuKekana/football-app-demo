@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Common/Navbar.jsx"
 import { ScrollToHash } from "./components/Common/ScrollToHash.jsx";
-import { Header } from "./components/Home/Header.jsx";
+import { Header } from "./components/Home/header.jsx";
 import { CommunityPreview } from "./components/Home/CommunityPreview.jsx";
-import { Features } from "./components/Home/Features.jsx";
-import { About } from "./components/Home/About.jsx";
-import { Services } from "./components/Home/Services.jsx";
-import { Contact } from "./components/Home/Contact.jsx";
+import { Features } from "./components/Home/features.jsx";
+import { About } from "./components/Home/about.jsx";
+import { Services } from "./components/Home/services.jsx";
+import { Contact } from "./components/Home/contact.jsx";
 
 import { FAQ } from "./components/Info/FAQ.jsx";
 import { Terms } from "./components/Info/Terms.jsx";
