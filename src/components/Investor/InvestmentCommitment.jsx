@@ -1,4 +1,3 @@
-// pages/Investor/InvestmentCommitment.jsx
 import React, { useMemo, useState } from "react";
 import "./styles/investment-commitment.css";
 

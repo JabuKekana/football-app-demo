@@ -1,6 +1,3 @@
-/* styles/investor-portfolio.css */
-/* For InvestorPortfolio.jsx only */
-
 :root {
   --ip-blue: #6ad7ff;
   --ip-blue2: #2fb8ff;
@@ -86,7 +83,6 @@
   max-width: 80ch;
 }
 
-/* Stats grid */
 .coreGrid {
   margin-top: 22px;
   display: grid;
@@ -122,7 +118,6 @@
   font-size: 1.35rem;
 }
 
-/* Main card */
 .coreCard {
   margin-top: 16px;
   border-radius: var(--ip-radius-lg);
@@ -169,7 +164,6 @@
   flex-wrap: wrap;
 }
 
-/* Buttons */
 .coreBtn {
   display: inline-flex;
   align-items: center;
@@ -225,7 +219,6 @@
   width: min(980px, 100%);
 }
 
-/* Table */
 .coreTableWrap {
   margin-top: 14px;
   border-radius: 18px;
@@ -265,7 +258,6 @@
   gap: 4px;
 }
 
-/* Badges + status pills */
 .coreBadge {
   display: inline-flex;
   align-items: center;
@@ -323,14 +315,12 @@
   opacity: 0.9;
 }
 
-/* Focus */
 .coreBtn:focus-visible {
   outline: 3px solid rgba(106, 215, 255, 0.7);
   outline-offset: 3px;
   border-radius: 14px;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .coreGrid--stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -361,7 +351,6 @@
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .coreBtn {
     transition: none;

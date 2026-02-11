@@ -1,4 +1,3 @@
-// pages/KYC/KycVerification.jsx
 import React, { useMemo, useState } from "react";
 import "./styles/kyc-pages.css";
 

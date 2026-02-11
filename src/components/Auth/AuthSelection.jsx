@@ -81,7 +81,6 @@ export const AuthSelection = () => {
             </div>
           </div>
 
-          {/* Selected State Actions */}
           {selectedType && (
             <div className="authSelection__actions">
               <div className="authSelection__selectedInfo">
@@ -108,7 +107,6 @@ export const AuthSelection = () => {
             </div>
           )}
 
-          {/* Login Section */}
           <div className="authSelection__footer">
             <div className="authSelection__loginSection">
               <span className="authSelection__muted">Already have an account?</span>

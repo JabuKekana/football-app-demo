@@ -47,7 +47,6 @@
   transform: scale(1.02);
 }
 
-/* Overlay layers */
 .header::before {
   content: "";
   position: absolute;
@@ -134,9 +133,14 @@
   max-width: 58ch;
   font-size: clamp(1rem, 1.25vw, 1.15rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.92);
   text-wrap: pretty;
+
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.65),
+    0 0 1px rgba(0, 0, 0, 0.9);
 }
+
 
 .header__cta {
   margin-top: 26px;
@@ -229,7 +233,6 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Right side visuals */
 .header__visual {
   position: relative;
   width: 100%;
@@ -365,7 +368,6 @@
   border: 1px solid rgba(106, 215, 255, 0.34);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .header__container {
     grid-template-columns: 1fr;
@@ -444,14 +446,12 @@
   }
 }
 
-/* Ultra wide screens */
 @media (min-width: 1400px) {
   .header__container {
     width: min(1260px, 100%);
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .header__spark::after {
     animation: none;

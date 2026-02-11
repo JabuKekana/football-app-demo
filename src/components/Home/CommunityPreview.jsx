@@ -1,4 +1,3 @@
-// CommunityPreview.jsx
 import React, { useMemo, useState } from "react";
 import "./styles/community-preview.css";
 
@@ -88,7 +87,7 @@ export const CommunityPreview = () => {
               </div>
               <h3 className="cp__actionTitle">Join 500+ Entrepreneurs</h3>
               <p className="cp__actionText">Connect with business owners in our community</p>
-              <a className="cp__primaryBtn" href="/signup">
+              <a className="cp__primaryBtn" href="/auth-selection">
                 Create Account
               </a>
             </div>

@@ -1,4 +1,3 @@
-// pages/Admin/UserManagement.jsx
 import React, { useMemo, useState } from "react";
 import "./styles/admin-pages.css";
 

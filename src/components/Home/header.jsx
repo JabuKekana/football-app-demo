@@ -22,10 +22,9 @@ export const Header = (props) => {
           <p className="header__subtitle">{paragraph}</p>
 
           <div className="header__cta">
-            <a className="header__button" href="#features">
+            <a className="header__button" href="/auth-selectio">
               Apply For Free
             </a>
-
             <a className="header__link" href="#about">
               Learn more
             </a>

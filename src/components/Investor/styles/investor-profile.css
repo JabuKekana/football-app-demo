@@ -1,5 +1,3 @@
-/* components/Investor/styles/investor-profile.css */
-
 :root {
   --invp-blue: #6ad7ff;
   --invp-blue2: #2fb8ff;
@@ -265,7 +263,6 @@
   background: rgba(106, 215, 255, 0.10);
 }
 
-/* Responsive */
 @media (max-width: 640px) {
   :root {
     --invp-pad: 18px;
@@ -284,7 +281,6 @@
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .invpBtn,
   .invpChip {

@@ -1,4 +1,3 @@
-// pages/Borrower/LoanApplication.jsx
 import React, { useMemo, useState } from "react";
 import "./styles/dashboard-pages.css";
 
@@ -7,20 +6,17 @@ export const LoanApplication = () => {
   const [savedMsg, setSavedMsg] = useState("");
 
   const [form, setForm] = useState({
-    // 1) Loan Details
     amount: "50000",
     purpose: "Working Capital",
     term: "12 months",
     rateRange: "10% - 18%",
 
-    // 2) Project / Use of Funds
     projectTitle: "",
     description: "",
     useOfFunds: "",
     outcomes: "",
     timeline: "",
 
-    // 3) Financials + Files
     annualRevenue: "",
     profitMargin: "",
     existingDebt: "",
@@ -28,7 +24,6 @@ export const LoanApplication = () => {
     collateralDesc: "",
     financialStatements: null,
 
-    // 4) Repayment + Docs
     repaymentSchedule: "Monthly",
     primarySource: "",
     secondarySource: "",
@@ -37,7 +32,6 @@ export const LoanApplication = () => {
     taxReturns: null,
     additionalDocs: null,
 
-    // 5) Final
     certify: true,
     creditCheck: true,
   });

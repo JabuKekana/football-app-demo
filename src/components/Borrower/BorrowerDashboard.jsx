@@ -1,4 +1,3 @@
-// pages/Borrower/BorrowerDashboard.jsx
 import React, { useMemo, useState } from "react";
 import "./styles/borrower-dashboard.css";
 

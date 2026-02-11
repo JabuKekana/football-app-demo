@@ -73,11 +73,6 @@
   margin-top: 20px;
 }
 
-/* Welcome Section */
-/* .authSelection__welcome {
-  text-align: left;
-} */
-
 .authSelection__kicker {
   display: inline-flex;
   align-items: center;
@@ -120,7 +115,6 @@
   margin-right: auto;
 }
 
-/* Cards Section */
 .authSelection__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -224,7 +218,6 @@
   font-size: 0.9rem;
 }
 
-/* Actions Section */
 .authSelection__actions {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--stroke);
@@ -298,7 +291,6 @@
   transform: translateY(-2px);
 }
 
-/* Footer Section */
 .authSelection__footer {
   text-align: center;
   padding-top: 20px;
@@ -354,7 +346,6 @@
   border-bottom-color: var(--blue);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .authSelection__cards {
     grid-template-columns: 1fr;
@@ -388,7 +379,6 @@
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .authSelection__card,
   .authSelection__button,

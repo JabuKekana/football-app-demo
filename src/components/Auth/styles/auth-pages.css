@@ -125,7 +125,6 @@
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* Cards */
 .auth__cards {
   margin-top: 22px;
   display: grid;
@@ -196,7 +195,6 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Form */
 .authForm {
   width: min(var(--max), 100%);
   margin-top: 22px;
@@ -428,7 +426,6 @@
   transform: translateY(-1px);
 }
 
-/* Steps */
 .authSteps {
   margin-top: 16px;
   display: flex;
@@ -454,7 +451,6 @@
   color: rgba(255, 255, 255, 0.92);
 }
 
-/* Mini cards */
 .authCardSmall {
   border-radius: 18px;
   padding: 14px;
@@ -492,7 +488,6 @@
   margin: 12px 0;
 }
 
-/* Multi select chips */
 .authMulti {
   display: grid;
   gap: 10px;
@@ -525,7 +520,6 @@
   border-color: rgba(106, 215, 255, 0.30);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .auth__cards {
     grid-template-columns: 1fr;
@@ -555,7 +549,6 @@
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .auth__link,
   .authCard,

@@ -37,7 +37,6 @@
   transform: scale(1.02);
 }
 
-/* Overlay layers */
 .about::before {
   content: "";
   position: absolute;
@@ -102,7 +101,7 @@
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.90);
-  font-size: 0.92rem;
+  font-size: 1rem;
   margin-bottom: 14px;
 }
 
@@ -135,6 +134,7 @@
 
 .about__panel-card-title {
   font-weight: 800;
+  font-size: 1.05rem;
   letter-spacing: -0.01em;
 }
 
@@ -166,7 +166,7 @@
 .about__panel-chips span {
   padding: 8px 10px;
   border-radius: 999px;
-  font-size: 0.92rem;
+  font-size: 1rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.86);
@@ -178,13 +178,14 @@
   align-items: center;
   justify-content: space-between;
   color: rgba(255, 255, 255, 0.74);
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 
 .about__panel-pill {
   padding: 6px 10px;
   border-radius: 999px;
   font-weight: 750;
+  font-size: 0.95rem;
   color: rgba(11, 15, 20, 0.92);
   background: linear-gradient(180deg, rgba(106, 215, 255, 0.95), rgba(47, 184, 255, 0.85));
   border: 1px solid rgba(255, 255, 255, 0.22);
@@ -213,7 +214,7 @@
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.86);
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0.2px;
 }
 
@@ -231,14 +232,14 @@
   font-weight: 850;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
 }
 
 .about__lead {
   margin: 12px 0 0;
   color: rgba(255, 255, 255, 0.82);
   line-height: 1.7;
-  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  font-size: clamp(1.08rem, 1.25vw, 1.18rem);
   max-width: 62ch;
 }
 
@@ -250,7 +251,7 @@
   margin: 0 0 12px;
   font-weight: 800;
   letter-spacing: -0.01em;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .about__lists {
@@ -277,6 +278,7 @@
   align-items: start;
   padding: 12px 14px;
   color: rgba(255, 255, 255, 0.86);
+  font-size: 1.02rem;
 }
 
 .about__item + .about__item {
@@ -307,7 +309,7 @@
 }
 
 .about__item-text {
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .about__cta {
@@ -328,6 +330,7 @@
   color: rgba(11, 15, 20, 0.92);
   text-decoration: none;
   font-weight: 750;
+  font-size: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 14px 44px rgba(47, 184, 255, 0.22);
   transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
@@ -350,6 +353,7 @@
   padding: 11px 14px;
   border-radius: 14px;
   color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -370,7 +374,6 @@
   border-radius: 14px;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .about__grid {
     grid-template-columns: 1fr;
@@ -405,14 +408,12 @@
   }
 }
 
-/* Ultra wide screens */
 @media (min-width: 1400px) {
   .about__container {
     width: min(1260px, 100%);
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .about__button,
   .about__link {

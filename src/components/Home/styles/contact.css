@@ -1,5 +1,3 @@
-/* styles/contact.css */
-
 :root {
   --blue: #6ad7ff;
   --blue-2: #2fb8ff;
@@ -327,7 +325,6 @@
   line-height: 1.6;
 }
 
-/* Footer */
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.10);
   background: rgba(11, 15, 20, 0.6);
@@ -345,7 +342,6 @@
   font-size: 0.95rem;
 }
 
-/* Add these footer link styles to your existing styles/contact.css */
 .footer__link {
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
@@ -365,8 +361,6 @@
   color: rgba(255, 255, 255, 0.45);
 }
 
-
-/* Responsive */
 @media (max-width: 1024px) {
   .contact__grid {
     grid-template-columns: 1fr;
@@ -387,7 +381,6 @@
   }
 }
 
-/* Large screens */
 @media (min-width: 1400px) {
   .contact__container,
   .footer__container {
@@ -395,7 +388,6 @@
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .contact__button,
   .contact__socialLink {

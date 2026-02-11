@@ -1,4 +1,3 @@
-// pages/Privacy.jsx
 import React from "react";
 import "./styles/legal-pages.css";
 

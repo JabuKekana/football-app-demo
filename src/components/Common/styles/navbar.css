@@ -21,7 +21,6 @@
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
-/* Navigation styles */
 .nav {
   position: fixed;
   top: 0;
@@ -68,12 +67,10 @@
 .nav__logo {
   width: 40px;
   height: 40px;
-  object-fit: cover; /* Fills the space, might crop edges */
-  /* Remove border, background, and padding */
+  object-fit: cover;
   border: none;
   background: none;
   padding: 0;
-  /* Remove border-radius if you want sharp corners */
   border-radius: 0;
 }
 
@@ -84,13 +81,13 @@
 
 .nav__brandTitle {
   font-weight: 750;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--white);
   letter-spacing: -0.01em;
 }
 
 .nav__brandSub {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.65);
   margin-top: 2px;
 }
@@ -149,7 +146,7 @@
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-weight: 550;
-  font-size: 0.95rem;
+  font-size: 1rem;
   padding: 6px 0;
   position: relative;
   transition: color 0.2s ease;
@@ -194,7 +191,7 @@
   color: rgba(11, 15, 20, 0.95);
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
   text-decoration: none;
   transition: all 0.2s ease;
@@ -206,7 +203,6 @@
   text-decoration: none;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .nav__toggle {
     display: block;
@@ -268,11 +264,11 @@
 
 @media (max-width: 640px) {
   .nav__brandTitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .nav__brandSub {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 
   @media (max-width: 640px) {

@@ -97,7 +97,6 @@
   width: min(980px, 100%);
 }
 
-/* Buttons (used inside this page) */
 .coreBtn {
   display: inline-flex;
   align-items: center;
@@ -149,7 +148,6 @@
   border-radius: 14px;
 }
 
-/* Messaging shell */
 .msgShell {
   margin-top: 22px;
   border-radius: var(--mc-radius-lg);
@@ -258,7 +256,6 @@
   border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
 
-/* Chat area */
 .msgChat {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -344,7 +341,6 @@
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* Composer */
 .msgComposer {
   padding: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.10);
@@ -382,7 +378,6 @@
   flex-wrap: wrap;
 }
 
-/* Utilities */
 .srOnly {
   position: absolute;
   width: 1px;
@@ -395,7 +390,6 @@
   border: 0;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .msgShell {
     grid-template-columns: 1fr;
@@ -424,7 +418,6 @@
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .coreBtn,
   .msgThread {

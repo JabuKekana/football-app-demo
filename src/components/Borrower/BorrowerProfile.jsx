@@ -1,4 +1,3 @@
-// pages/Borrower/BorrowerProfile.jsx
 import React, { useState } from "react";
 import "./styles/dashboard-pages.css";
 
