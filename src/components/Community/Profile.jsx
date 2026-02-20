@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { PostCard } from "./PostCard";
-import { UserBadge } from "./UserBadge";
+// import { UserBadge } from "./UserBadge";
 import "./styles/profile.css";
 
 export const Profile = () => {
@@ -14,7 +14,8 @@ export const Profile = () => {
     name: "Sarah M.",
     username: "@sarah_finance",
     avatar: "https://i.pravatar.cc/150?u=1",
-    coverPhoto: "https://images.unsplash.com/photo-1557683316-973673baf926?w=1200",
+    coverPhoto:
+      "https://images.unsplash.com/photo-1557683316-973673baf926?w=1200",
     reputation: 1240,
     role: "Financial Analyst",
     location: "Johannesburg, SA",
@@ -25,15 +26,16 @@ export const Profile = () => {
       posts: 87,
       comments: 342,
       followers: 1240,
-      following: 156
-    }
+      following: 156,
+    },
   };
 
   const userPosts = [
     {
       id: 4,
       title: "Tips for managing cash flow during seasonal downturns?",
-      content: "Our retail business does 70% of revenue in Q4. The first quarter is always tight. What strategies have worked for other seasonal businesses to smooth cash flow and avoid emergency funding?",
+      content:
+        "Our retail business does 70% of revenue in Q4. The first quarter is always tight. What strategies have worked for other seasonal businesses to smooth cash flow and avoid emergency funding?",
       author: user,
       timestamp: "2 days ago",
       votes: 203,
@@ -42,18 +44,19 @@ export const Profile = () => {
       topics: ["Cash Flow", "Business Loans"],
       isSaved: false,
       isUpvoted: false,
-      isDownvoted: false
-    }
+      isDownvoted: false,
+    },
   ];
 
   const userComments = [
     {
       id: 1001,
       postTitle: "How to structure a pitch deck for angel investors?",
-      content: "Great question! Make sure to include your traction slide early - investors want to see what you've achieved with limited resources. Also, keep the team slide simple but impactful.",
+      content:
+        "Great question! Make sure to include your traction slide early - investors want to see what you've achieved with limited resources. Also, keep the team slide simple but impactful.",
       timestamp: "3 hours ago",
-      votes: 24
-    }
+      votes: 24,
+    },
   ];
 
   const handleVote = () => {}; // Mock function
@@ -62,18 +65,17 @@ export const Profile = () => {
 
   return (
     <div className="profile">
-      {/* Cover Image */}
       <div className="profile__cover">
-        <img src={user.coverPhoto} alt="Cover" className="profile__cover-image" />
+        <img
+          src={user.coverPhoto}
+          alt="Cover"
+          className="profile__cover-image"
+        />
       </div>
 
-      {/* Profile Header */}
       <div className="profile__header">
         <div className="profile__avatar-container">
           <img src={user.avatar} alt={user.name} className="profile__avatar" />
-          <div className="profile__badges">
-            <UserBadge badges={user.badges} size="large" />
-          </div>
         </div>
 
         <div className="profile__info">
@@ -107,12 +109,10 @@ export const Profile = () => {
         </div>
       </div>
 
-      {/* Bio */}
       <div className="profile__bio">
         <p>{user.bio}</p>
       </div>
 
-      {/* Stats */}
       <div className="profile__stats">
         <div className="profile__stat">
           <span className="profile__stat-value">{user.stats.posts}</span>
@@ -132,45 +132,43 @@ export const Profile = () => {
         </div>
       </div>
 
-      {/* Tabs */}
       <div className="profile__tabs">
-        <button 
-          className={`profile__tab ${activeTab === 'posts' ? 'isActive' : ''}`}
-          onClick={() => setActiveTab('posts')}
+        <button
+          className={`profile__tab ${activeTab === "posts" ? "isActive" : ""}`}
+          onClick={() => setActiveTab("posts")}
         >
           <i className="fa fa-file-text" aria-hidden="true"></i>
           Posts
         </button>
-        <button 
-          className={`profile__tab ${activeTab === 'comments' ? 'isActive' : ''}`}
-          onClick={() => setActiveTab('comments')}
+        <button
+          className={`profile__tab ${activeTab === "comments" ? "isActive" : ""}`}
+          onClick={() => setActiveTab("comments")}
         >
           <i className="fa fa-comments" aria-hidden="true"></i>
           Comments
         </button>
-        <button 
-          className={`profile__tab ${activeTab === 'saved' ? 'isActive' : ''}`}
-          onClick={() => setActiveTab('saved')}
+        <button
+          className={`profile__tab ${activeTab === "saved" ? "isActive" : ""}`}
+          onClick={() => setActiveTab("saved")}
         >
           <i className="fa fa-bookmark" aria-hidden="true"></i>
           Saved
         </button>
-        <button 
-          className={`profile__tab ${activeTab === 'about' ? 'isActive' : ''}`}
-          onClick={() => setActiveTab('about')}
+        <button
+          className={`profile__tab ${activeTab === "about" ? "isActive" : ""}`}
+          onClick={() => setActiveTab("about")}
         >
           <i className="fa fa-user" aria-hidden="true"></i>
           About
         </button>
       </div>
 
-      {/* Tab Content */}
       <div className="profile__content">
-        {activeTab === 'posts' && (
+        {activeTab === "posts" && (
           <div className="profile__posts">
-            {userPosts.map(post => (
-              <PostCard 
-                key={post.id} 
+            {userPosts.map((post) => (
+              <PostCard
+                key={post.id}
                 post={post}
                 onVote={handleVote}
                 onSave={handleSave}
@@ -179,11 +177,14 @@ export const Profile = () => {
           </div>
         )}
 
-        {activeTab === 'comments' && (
+        {activeTab === "comments" && (
           <div className="profile__comments">
-            {userComments.map(comment => (
+            {userComments.map((comment) => (
               <div key={comment.id} className="profile__comment">
-                <Link to={`/community/post/${comment.id}`} className="profile__comment-post">
+                <Link
+                  to={`/community/post/${comment.id}`}
+                  className="profile__comment-post"
+                >
                   {comment.postTitle}
                 </Link>
                 <p className="profile__comment-content">{comment.content}</p>
@@ -202,13 +203,13 @@ export const Profile = () => {
           </div>
         )}
 
-        {activeTab === 'saved' && (
+        {activeTab === "saved" && (
           <div className="profile__saved">
             <p className="profile__empty">No saved posts yet</p>
           </div>
         )}
 
-        {activeTab === 'about' && (
+        {activeTab === "about" && (
           <div className="profile__about">
             <div className="profile__about-section">
               <h3>Badges & Achievements</h3>
@@ -226,9 +227,15 @@ export const Profile = () => {
               <h3>Areas of Expertise</h3>
               <div className="profile__expertise">
                 <span className="profile__expertise-tag">SME Funding</span>
-                <span className="profile__expertise-tag">Cash Flow Management</span>
-                <span className="profile__expertise-tag">Financial Modeling</span>
-                <span className="profile__expertise-tag">Business Valuation</span>
+                <span className="profile__expertise-tag">
+                  Cash Flow Management
+                </span>
+                <span className="profile__expertise-tag">
+                  Financial Modeling
+                </span>
+                <span className="profile__expertise-tag">
+                  Business Valuation
+                </span>
               </div>
             </div>
 

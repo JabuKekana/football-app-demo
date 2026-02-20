@@ -204,7 +204,6 @@ export const PostDetail = () => {
 
   return (
     <div className="postDetail">
-      {/* Post Header */}
       <div className="postDetail__header">
         <Link to="/community" className="postDetail__back">
           <i className="fa fa-arrow-left" aria-hidden="true"></i>
@@ -224,7 +223,6 @@ export const PostDetail = () => {
         </div>
       </div>
 
-      {/* Post Content */}
       <article className="postDetail__article">
         <div className="postDetail__vote">
           <VotingButtons 
@@ -295,13 +293,11 @@ export const PostDetail = () => {
         </div>
       </article>
 
-      {/* Comments Section */}
       <section className="postDetail__comments">
         <h2 className="postDetail__comments-title">
           {post.comments.length} Comments
         </h2>
 
-        {/* Add Comment */}
         <form className="postDetail__comment-form" onSubmit={handleAddComment}>
           <img 
             src="https://i.pravatar.cc/150?u=1" 
@@ -326,7 +322,6 @@ export const PostDetail = () => {
           </div>
         </form>
 
-        {/* Comments List */}
         <div className="postDetail__comments-list">
           {post.comments.map(comment => (
             <CommentThread 

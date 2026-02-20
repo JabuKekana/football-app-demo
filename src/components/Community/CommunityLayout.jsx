@@ -50,7 +50,6 @@ export const CommunityLayout = () => {
   return (
     <CommunityAuthContext.Provider value={{ currentUser, notifications }}>
       <div className="community">
-        {/* Top Navigation */}
         <nav className="community__nav">
           <div className="community__nav-container">
             <div className="community__nav-left">
@@ -80,7 +79,6 @@ export const CommunityLayout = () => {
             </div>
 
             <div className="community__nav-right">
-              {/* Mobile Home Button */}
               <Link to="/" className="community__mobile-home">
                 <i className="fa fa-home" aria-hidden="true"></i>
               </Link>
@@ -115,12 +113,9 @@ export const CommunityLayout = () => {
           </div>
         </nav>
 
-        {/* Main Layout */}
         <div className="community__layout">
-          {/* Sidebar */}
           <aside className={`community__sidebar ${sidebarOpen ? 'isOpen' : ''}`}>
             <div className="community__sidebar-content">
-              {/* Home Link in Sidebar */}
               <div className="community__home-link">
                 <Link to="/" className="community__home-btn">
                   <i className="fa fa-home" aria-hidden="true"></i>
@@ -187,9 +182,7 @@ export const CommunityLayout = () => {
             </div>
           </aside>
 
-          {/* Main Content */}
           <main className="community__main">
-            {/* Breadcrumbs */}
             <div className="community__breadcrumbs">
               <Link to="/" className="community__breadcrumb">
                 <i className="fa fa-home" aria-hidden="true"></i>

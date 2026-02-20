@@ -358,6 +358,15 @@
   .authSelection__lead {
     font-size: 1rem;
   }
+  .authSelection__hero::before {
+    inset: 0;
+  }
+  
+  .authSelection__hero::before {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 30%),
+      radial-gradient(600px 300px at 20% 0%, rgba(255, 255, 255, 0.06), transparent 60%);
+  }
 }
 
 @media (max-width: 480px) {

@@ -143,7 +143,6 @@ export const CommunityHome = () => {
 
   return (
     <div className="community__feed">
-      {/* Feed Header */}
       <div className="community__feed-header">
         <h1 className="community__feed-title">Community Discussions</h1>
         
@@ -178,8 +177,6 @@ export const CommunityHome = () => {
           </button>
         </div>
       </div>
-
-      {/* Posts List */}
       <div className="community__posts">
         {posts.map(post => (
           <PostCard 
@@ -190,8 +187,6 @@ export const CommunityHome = () => {
           />
         ))}
       </div>
-
-      {/* Load More */}
       <div className="community__load-more">
         <button className="community__load-btn">
           Load More Discussions

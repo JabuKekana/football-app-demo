@@ -14,7 +14,7 @@ export const Navbar = () => {
   const links = useMemo(
     () => [
       { to: "/", label: "Home" },
-      { to: "/#community", label: "Community" },
+      { to: "/community", label: "Community" },
       { to: "/#about", label: "About" },
       { to: "/#services", label: "Services" },
       { to: "/#contact", label: "Contact" },

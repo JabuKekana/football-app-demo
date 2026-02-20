@@ -21,7 +21,7 @@
   grid-template-columns: auto 1fr auto;
   gap: 24px;
   align-items: start;
-  margin-top: -48px;
+  margin-top: -34px;
   padding: 0 24px;
 }
 
@@ -35,15 +35,6 @@
   border-radius: 50%;
   border: 4px solid var(--community-ink);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.profile__badges {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 4px;
 }
 
 .profile__info {
@@ -182,7 +173,6 @@
   padding: 0 24px;
 }
 
-/* Comments tab */
 .profile__comment {
   padding: 16px;
   border-radius: var(--community-radius-md);
@@ -216,7 +206,6 @@
   font-size: 0.85rem;
 }
 
-/* About tab */
 .profile__about-section {
   margin-bottom: 24px;
 }
@@ -225,25 +214,6 @@
   margin: 0 0 12px 0;
   font-size: 1.1rem;
   font-weight: 900;
-}
-
-.profile__badges-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.profile__badge-item {
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(106, 215, 255, 0.1);
-  border: 1px solid rgba(106, 215, 255, 0.25);
-  color: var(--community-blue);
-  font-size: 0.9rem;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 .profile__expertise {
