@@ -34,6 +34,19 @@ export const CommunityLayout = () => {
     { id: 8, name: "Financial Models", icon: "fa-table", count: 83 }
   ];
 
+  // Helper function to get current page name for breadcrumbs
+  const getCurrentPageName = (pathname) => {
+    if (pathname.includes('/post/')) return 'Post';
+    if (pathname.includes('/create')) return 'Create Post';
+    if (pathname.includes('/profile/')) return 'Profile';
+    if (pathname.includes('/topic/')) {
+      const topicId = pathname.split('/').pop();
+      const topic = topics.find(t => t.id.toString() === topicId);
+      return topic ? topic.name : 'Topic';
+    }
+    return '';
+  };
+
   return (
     <CommunityAuthContext.Provider value={{ currentUser, notifications }}>
       <div className="community">
@@ -67,6 +80,11 @@ export const CommunityLayout = () => {
             </div>
 
             <div className="community__nav-right">
+              {/* Mobile Home Button */}
+              <Link to="/" className="community__mobile-home">
+                <i className="fa fa-home" aria-hidden="true"></i>
+              </Link>
+
               <Link to="/community/create" className="community__create-btn">
                 <i className="fa fa-plus" aria-hidden="true"></i>
                 <span>Ask Question</span>
@@ -102,6 +120,14 @@ export const CommunityLayout = () => {
           {/* Sidebar */}
           <aside className={`community__sidebar ${sidebarOpen ? 'isOpen' : ''}`}>
             <div className="community__sidebar-content">
+              {/* Home Link in Sidebar */}
+              <div className="community__home-link">
+                <Link to="/" className="community__home-btn">
+                  <i className="fa fa-home" aria-hidden="true"></i>
+                  <span>Back to Main Site</span>
+                </Link>
+              </div>
+
               <div className="community__user-card">
                 <img 
                   src={currentUser.avatar} 
@@ -163,6 +189,26 @@ export const CommunityLayout = () => {
 
           {/* Main Content */}
           <main className="community__main">
+            {/* Breadcrumbs */}
+            <div className="community__breadcrumbs">
+              <Link to="/" className="community__breadcrumb">
+                <i className="fa fa-home" aria-hidden="true"></i>
+                <span>Home</span>
+              </Link>
+              <span className="community__breadcrumb-sep">/</span>
+              <Link to="/community" className="community__breadcrumb">
+                Community
+              </Link>
+              {location.pathname !== '/community' && (
+                <>
+                  <span className="community__breadcrumb-sep">/</span>
+                  <span className="community__breadcrumb community__breadcrumb--current">
+                    {getCurrentPageName(location.pathname)}
+                  </span>
+                </>
+              )}
+            </div>
+            
             <Outlet />
           </main>
         </div>

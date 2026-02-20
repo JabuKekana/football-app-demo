@@ -12,6 +12,16 @@ export const DevPages = () => {
         items: [{ label: "Landing page", to: "/" }],
       },
       {
+        title: "Community",
+        items: [
+          { label: "Community Feed", to: "/community" },
+          { label: "Create Post", to: "/community/create" },
+          { label: "Post Detail (Example)", to: "/community/post/3" },
+          { label: "User Profile", to: "/community/profile/1" },
+          { label: "Topic View", to: "/community/topic/1" },
+        ],
+      },
+      {
         title: "Information Pages",
         items: [
           { label: "FAQ", to: "/faq" },
@@ -22,7 +32,7 @@ export const DevPages = () => {
       {
         title: "Auth Flow",
         items: [
-          { label: "Auth Selection", to: "/auth/selection" },
+          { label: "Auth Selection", to: "/auth-selection" },
           { label: "Borrower Registration", to: "/register/borrower" },
           { label: "Investor Registration", to: "/register/investor" },
           { label: "Login", to: "/login" },
@@ -111,6 +121,8 @@ export const DevPages = () => {
               <div className="devNote__updates">
                 <span className="devNote__badge">Recent Updates</span>
                 <ul className="devNote__list">
+                  <li>Added new Community section with full Quora-like functionality</li>
+                  <li>Community includes feed, post detail, create post, profiles, and topic filtering</li>
                   <li>Merged "Auth Start" and "Account Type" into single "Auth Selection" page</li>
                   <li>Removed redundant "/account-type" page from auth flow</li>
                   <li>Streamlined user journey with one-step path selection</li>

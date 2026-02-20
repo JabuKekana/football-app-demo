@@ -202,7 +202,7 @@ export const CommunityPreview = () => {
             <a className="cp__ctaBtn" href="/community">
               Explore Full Community
             </a>
-            <a className="cp__ctaBtn cp__ctaBtn--outline" href="/signup">
+            <a className="cp__ctaBtn cp__ctaBtn--outline" href="/auth-selection">
               Sign Up Free
             </a>
           </div>
