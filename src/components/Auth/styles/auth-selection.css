@@ -100,7 +100,7 @@
   font-weight: 950;
   letter-spacing: -0.02em;
   line-height: 1.08;
-  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
   color: var(--white);
   text-align: center;
 }

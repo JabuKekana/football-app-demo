@@ -1,0 +1,78 @@
+.votingButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.votingButtons--small {
+  gap: 2px;
+}
+
+.votingButtons--small .votingButtons__count {
+  font-size: 0.85rem;
+  min-width: 32px;
+}
+
+.votingButtons--small button {
+  width: 28px;
+  height: 28px;
+  font-size: 0.85rem;
+}
+
+.votingButtons--medium .votingButtons__count {
+  font-size: 1rem;
+  min-width: 40px;
+}
+
+.votingButtons--medium button {
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+}
+
+.votingButtons button {
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.votingButtons button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(106, 215, 255, 0.3);
+  color: var(--community-blue);
+  transform: translateY(-1px);
+}
+
+.votingButtons__up.isActive {
+  background: rgba(106, 215, 255, 0.15);
+  border-color: var(--community-blue);
+  color: var(--community-blue);
+}
+
+.votingButtons__down.isActive {
+  background: rgba(255, 100, 100, 0.15);
+  border-color: #ff6464;
+  color: #ff6464;
+}
+
+.votingButtons__count {
+  font-weight: 900;
+  color: var(--community-white);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .votingButtons button {
+    transition: none;
+  }
+  
+  .votingButtons button:hover {
+    transform: none;
+  }
+}

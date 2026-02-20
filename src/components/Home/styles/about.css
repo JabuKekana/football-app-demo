@@ -232,7 +232,7 @@
   font-weight: 850;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 
 .about__lead {

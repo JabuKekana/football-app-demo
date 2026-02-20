@@ -78,7 +78,7 @@
   margin: 12px 0 0;
   font-weight: 850;
   letter-spacing: -0.02em;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
 }
 
 .features__lead {

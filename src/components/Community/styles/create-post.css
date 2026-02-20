@@ -1,0 +1,229 @@
+.createPost {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.createPost__header {
+  margin-bottom: 32px;
+}
+
+.createPost__title {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+}
+
+.createPost__subtitle {
+  color: var(--community-gray);
+  line-height: 1.6;
+}
+
+.createPost__form {
+  display: grid;
+  gap: 24px;
+}
+
+.createPost__field {
+  display: grid;
+  gap: 8px;
+}
+
+.createPost__label {
+  font-weight: 900;
+  color: var(--community-white);
+}
+
+.createPost__required {
+  color: var(--community-blue);
+}
+
+.createPost__hint {
+  font-size: 0.85rem;
+  color: var(--community-gray3);
+}
+
+.createPost__input,
+.createPost__textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--community-radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--community-stroke);
+  color: var(--community-white);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.createPost__textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.createPost__input:focus,
+.createPost__textarea:focus {
+  border-color: var(--community-blue);
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.createPost__topics-selector {
+  position: relative;
+}
+
+.createPost__topics-button {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--community-radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--community-stroke);
+  color: var(--community-white);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.createPost__topics-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--community-blue);
+}
+
+.createPost__topics-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: rgba(11, 15, 20, 0.98);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--community-stroke);
+  border-radius: var(--community-radius-md);
+  padding: 12px;
+  z-index: 10;
+  display: grid;
+  gap: 8px;
+}
+
+.createPost__topic-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--community-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.createPost__topic-option:hover {
+  background: var(--community-glass);
+}
+
+.createPost__topic-option input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.createPost__topic-option input:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.createPost__selected-topics {
+  margin-top: 12px;
+}
+
+.createPost__guidelines {
+  padding: 16px;
+  border-radius: var(--community-radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--community-stroke);
+}
+
+.createPost__guidelines-title {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.createPost__guidelines-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--community-gray);
+  line-height: 1.6;
+}
+
+.createPost__guidelines-list li {
+  margin-bottom: 4px;
+}
+
+.createPost__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.createPost__cancel,
+.createPost__submit {
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.createPost__cancel {
+  background: none;
+  border: 1px solid var(--community-stroke);
+  color: var(--community-gray);
+}
+
+.createPost__cancel:hover {
+  background: var(--community-glass);
+  color: var(--community-white);
+}
+
+.createPost__submit {
+  background: linear-gradient(180deg, var(--community-blue), var(--community-blue2));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--community-ink);
+}
+
+.createPost__submit:hover:enabled {
+  transform: translateY(-2px);
+  box-shadow: var(--community-shadow-glow);
+}
+
+.createPost__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .createPost__actions {
+    flex-direction: column;
+  }
+
+  .createPost__cancel,
+  .createPost__submit {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .createPost__input,
+  .createPost__textarea,
+  .createPost__topics-button,
+  .createPost__topic-option,
+  .createPost__cancel,
+  .createPost__submit {
+    transition: none;
+  }
+  
+  .createPost__submit:hover:enabled {
+    transform: none;
+  }
+}

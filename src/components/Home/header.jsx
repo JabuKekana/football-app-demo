@@ -3,7 +3,7 @@ import "./styles/header.css";
 
 export const Header = (props) => {
   const title = props?.data?.title ?? "Loading";
-  const paragraph = props?.data?.paragraph ?? "Loading";
+  const paragraph = props?.data?.paragraph ?? "The Capital Community was established to rethink how SMEs access funding.";
 
   return (
     <header className="header" id="header" aria-label="Intro section">
@@ -22,7 +22,7 @@ export const Header = (props) => {
           <p className="header__subtitle">{paragraph}</p>
 
           <div className="header__cta">
-            <a className="header__button" href="/auth-selectio">
+            <a className="header__button" href="/auth-selection">
               Apply For Free
             </a>
             <a className="header__link" href="#about">

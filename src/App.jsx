@@ -9,6 +9,13 @@ import { About } from "./components/Home/about.jsx";
 import { Services } from "./components/Home/services.jsx";
 import { Contact } from "./components/Home/contact.jsx";
 
+// Community
+import { CommunityLayout } from "./components/Community/CommunityLayout.jsx";
+import { CommunityHome } from "./components/Community/CommunityHome.jsx";
+import { PostDetail } from "./components/Community/PostDetail.jsx";
+import { CreatePost } from "./components/Community/CreatePost.jsx";
+import { Profile } from "./components/Community/Profile.jsx";
+
 import { FAQ } from "./components/Info/FAQ.jsx";
 import { Terms } from "./components/Info/Terms.jsx";
 import { Privacy } from "./components/Info/Privacy.jsx";
@@ -79,6 +86,15 @@ const App = () => {
         <Routes>
           {/* Home */}
           <Route path="/" element={<Home landingPageData={landingPageData} />} />
+
+          {/* Community - Full Platform */}
+          <Route path="/community" element={<CommunityLayout />}>
+            <Route index element={<CommunityHome />} />
+            <Route path="post/:postId" element={<PostDetail />} />
+            <Route path="create" element={<CreatePost />} />
+            <Route path="profile/:userId?" element={<Profile />} />
+            <Route path="topic/:topicId" element={<CommunityHome />} />
+          </Route>
 
           {/* Dev index */}
           <Route path="/dev" element={<DevPages />} />
