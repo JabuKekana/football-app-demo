@@ -1,13 +1,13 @@
 # football-app-demo
 
-A premium, white-label football club experience for the web. The prototype presents Apex Football Club across membership, live matchday, merchandise, mobile tickets, and an in-app AI assistant.
+A premium Kaizer Chiefs supporter membership concept for the web. The prototype presents annual membership, digital supporter identity, live matchday, merchandise, mobile tickets, and an in-app AI assistant.
 
 ## What is included
 
 - Responsive desktop presentation with a realistic mobile device frame
 - Full-viewport mobile experience without the mock device chrome
-- Home feed, live Match Centre, digital fan ID, official store, ticket wallet, and AI assistant
-- Interactive voting, product options, bag, one-tap checkout, ticket wallet, official ticketing hand-off, and sample AI conversations
+- Home feed, R250 annual supporter membership, welcome-pack selection, live Match Centre, digital supporter ID, store, ticket wallet, and AI assistant
+- Interactive joining flow, voting, product options, bag, one-tap checkout, ticket wallet, official ticketing hand-off, and sample AI conversations
 - Local React state only—no backend services or external runtime APIs
 - Tailwind CSS, Lucide React icons, and client-rendered QR codes
 
@@ -32,5 +32,5 @@ The optimized static output is written to `dist/`. `vercel.json` is configured f
 
 - Club content and demo data: `src/data/demoData.js`
 - Brand palette and responsive presentation: `src/index.css` and `tailwind.config.js`
-- Generated editorial and product imagery: `public/assets/`
+- Generated editorial and product imagery: `static/assets/`
 - Screen-level components: `src/screens/`

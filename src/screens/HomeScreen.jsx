@@ -9,6 +9,7 @@ import {
   ShoppingBag,
   Sparkles,
   Ticket,
+  UsersRound,
   UserRound,
 } from "lucide-react";
 import { ClubCrest } from "../components/apex/ClubCrest";
@@ -61,24 +62,33 @@ export function HomeScreen({ onNavigate, onNotify, motmVote, onVote }) {
 
   return (
     <div className="screen-bg min-h-full animate-screen-in pb-28">
-      <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-white/[.06] bg-apex-navy/75 px-5 pb-3 pt-6 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-white/[.06] bg-apex-navy/75 px-5 pb-3 pt-8 backdrop-blur-xl">
         <ClubCrest size={43} />
         <div className="min-w-0 flex-1">
-          <p className="text-[9px] font-bold uppercase tracking-[.18em] text-apex-teal">Apex Football Club</p>
-          <h1 className="truncate text-[15px] font-extrabold tracking-tight">Welcome back, Kabelo</h1>
+          <p className="text-[9px] font-bold uppercase tracking-[.18em] text-apex-teal">Kaizer Chiefs Football Club</p>
+          <h1 className="truncate text-[15px] font-extrabold tracking-tight">Welcome, Khosi Kabelo</h1>
         </div>
         <button onClick={onNotify} className="icon-button relative" aria-label="Notifications">
           <Bell size={18} />
           <span className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-apex-teal ring-2 ring-apex-navy" />
         </button>
-        <button onClick={() => onNavigate("membership")} className="avatar-button" aria-label="Open Season Ticket Holder profile">
+        <button onClick={() => onNavigate("membership")} className="avatar-button" aria-label="Open supporter profile">
           <UserRound size={18} />
         </button>
       </header>
 
       <main className="space-y-6 px-4 pt-4">
+        <button onClick={() => onNavigate("join")} className="membership-hero group relative flex w-full items-center overflow-hidden rounded-[24px] border border-apex-teal/25 p-4 text-left shadow-xl">
+          <div className="relative z-10 min-w-0 flex-1 pr-2">
+            <div className="mb-2 flex items-center gap-1.5 text-[8px] font-black uppercase tracking-[.15em] text-apex-teal"><UsersRound size={12} /> 2026/27 supporter membership</div>
+            <h2 className="text-lg font-black leading-tight">Join the Khosi family for R250 a year.</h2>
+            <p className="mt-2 text-[9px] leading-relaxed text-white/50">Includes a size 5 ball, cap or bucket hat, supporter card and branded T-shirt.</p>
+          </div>
+          <div className="relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full bg-apex-teal text-apex-navy transition group-hover:scale-105"><ChevronRight size={19} /></div>
+        </button>
+
         <section className="hero-card relative isolate overflow-hidden rounded-[28px] border border-white/10 px-5 pb-5 pt-32 shadow-2xl">
-          <img src="/assets/stadium-hero.png" alt="Floodlit Apex FC stadium before kick-off" className="absolute inset-0 -z-20 h-full w-full object-cover" />
+          <img src="/assets/stadium-hero.png" alt="Floodlit stadium before kick-off" className="brand-stadium absolute inset-0 -z-20 h-full w-full object-cover" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-t from-apex-navy via-apex-navy/55 to-apex-navy/5" />
           <div className="mb-3 flex items-center gap-2">
             <span className="rounded-full bg-apex-teal px-2.5 py-1 text-[9px] font-black uppercase tracking-[.12em] text-apex-navy">Next match</span>
@@ -116,12 +126,12 @@ export function HomeScreen({ onNavigate, onNotify, motmVote, onVote }) {
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-center">
             <div>
               <ClubCrest size={46} className="mx-auto" />
-              <p className="mt-1 text-xs font-extrabold">Apex FC</p>
+              <p className="mt-1 text-xs font-extrabold">Kaizer Chiefs</p>
             </div>
             <div className="rounded-2xl bg-apex-navy px-4 py-2.5 text-2xl font-black tracking-tight text-white shadow-inner">2—1</div>
             <div>
-              <div className="mx-auto grid h-[46px] w-[46px] place-items-center rounded-[15px] border border-white/10 bg-white/[.05] text-[11px] font-black">RCF</div>
-              <p className="mt-1 text-xs font-extrabold">Rival City</p>
+              <div className="mx-auto grid h-[46px] w-[46px] place-items-center rounded-[15px] border border-white/10 bg-white/[.05] text-[11px] font-black">SR</div>
+              <p className="mt-1 text-xs font-extrabold">Soweto Rivals</p>
             </div>
           </div>
 
@@ -175,7 +185,7 @@ export function HomeScreen({ onNavigate, onNotify, motmVote, onVote }) {
         <section>
           <div className="mb-3 flex items-end justify-between">
             <div>
-              <p className="section-kicker">Inside Apex</p>
+              <p className="section-kicker">Inside Amakhosi</p>
               <h2 className="section-title">Latest news</h2>
             </div>
             <span className="text-[10px] font-bold muted-text">Swipe →</span>
@@ -187,7 +197,7 @@ export function HomeScreen({ onNavigate, onNotify, motmVote, onVote }) {
                 onClick={() => onNavigate(item.action)}
                 className="news-card group relative h-48 min-w-[82%] snap-center overflow-hidden rounded-[24px] border border-white/10 text-left"
               >
-                <img src={item.image} alt="" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                <img src={item.image} alt="" className={`absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105 ${item.id === "reserves" ? "brand-editorial" : ""}`} />
                 <div className="absolute inset-0 bg-gradient-to-t from-apex-navy via-apex-navy/25 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <p className="mb-1.5 text-[9px] font-black uppercase tracking-[.14em] text-apex-teal">{item.eyebrow}</p>

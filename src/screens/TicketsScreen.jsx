@@ -34,7 +34,7 @@ export function TicketsScreen({ onToast }) {
 
         <section className="ticket-stub animate-ticket-float overflow-hidden rounded-[30px] bg-apex-mist text-apex-navy shadow-[0_25px_60px_rgba(3,10,30,.38)]">
           <div className="relative overflow-hidden bg-apex-navy px-5 pb-5 pt-6 text-white">
-            <img src="/assets/stadium-hero.png" alt="" className="absolute inset-0 h-full w-full object-cover opacity-35" />
+            <img src="/assets/stadium-hero.png" alt="" className="brand-stadium absolute inset-0 h-full w-full object-cover opacity-35" />
             <div className="absolute inset-0 bg-gradient-to-r from-apex-navy via-apex-navy/75 to-apex-navy/30" />
             <div className="relative z-10 flex items-start justify-between">
               <ClubCrest size={52} />
@@ -44,9 +44,9 @@ export function TicketsScreen({ onToast }) {
               </div>
             </div>
             <div className="relative z-10 mt-6">
-              <p className="text-[9px] font-bold uppercase tracking-[.15em] text-white/45">Apex Football Club</p>
-              <h3 className="mt-1 text-2xl font-black leading-none tracking-[-.04em]">Apex FC <span className="text-apex-teal">vs</span><br />Rival City FC</h3>
-              <div className="mt-4 flex items-center gap-1.5 text-[10px] font-bold text-white/65"><MapPin size={13} className="text-apex-teal" /> Main Stadium · South Gate</div>
+              <p className="text-[9px] font-bold uppercase tracking-[.15em] text-white/45">Kaizer Chiefs Football Club</p>
+              <h3 className="mt-1 text-2xl font-black leading-none tracking-[-.04em]">Kaizer Chiefs <span className="text-apex-teal">vs</span><br />Soweto Rivals</h3>
+              <div className="mt-4 flex items-center gap-1.5 text-[10px] font-bold text-white/65"><MapPin size={13} className="text-apex-teal" /> FNB Stadium · South Gate</div>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export function TicketsScreen({ onToast }) {
           </div>
 
           <div className="flex items-center gap-4 px-5 py-5">
-            <QrCode value="APEXFC://TICKET/AFC90405-MATCH09-B114-RF-S12" size={116} label="Apex FC match ticket" />
+            <QrCode value="KC://TICKET/KC90405-MATCH09-B114-RF-S12" size={116} label="Kaizer Chiefs match ticket" />
             <div className="flex-1">
               <p className="text-[8px] font-black uppercase tracking-[.16em] text-apex-navy/40">Entry details</p>
               <h4 className="mt-1 text-base font-black">Gate 4B</h4>

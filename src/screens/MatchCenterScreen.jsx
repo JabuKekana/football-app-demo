@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Activity, ChevronRight, CircleDot, ExternalLink, Radio, Shield, Sparkles, Trophy, UsersRound } from "lucide-react";
+import { Activity, ChevronRight, CircleDot, ExternalLink, MapPin, Radio, Shield, Sparkles, Ticket, Trophy, UsersRound } from "lucide-react";
 import { ClubCrest } from "../components/apex/ClubCrest";
 import { STADIUM_MANAGEMENT_URL } from "../data/demoData";
 
 const timeline = [
-  { minute: "63’", icon: CircleDot, title: "GOAL · Apex FC", detail: "T. Ndlovu · Right-foot finish" },
-  { minute: "51’", icon: Shield, title: "Yellow card · Rival City", detail: "M. Daniels · Late challenge" },
-  { minute: "34’", icon: CircleDot, title: "GOAL · Rival City", detail: "J. Molefe · Header" },
-  { minute: "18’", icon: CircleDot, title: "GOAL · Apex FC", detail: "L. Silva · Penalty" },
+  { minute: "63’", icon: CircleDot, title: "GOAL · Kaizer Chiefs", detail: "T. Ndlovu · Right-foot finish" },
+  { minute: "51’", icon: Shield, title: "Yellow card · Soweto Rivals", detail: "M. Daniels · Late challenge" },
+  { minute: "34’", icon: CircleDot, title: "GOAL · Soweto Rivals", detail: "J. Molefe · Header" },
+  { minute: "18’", icon: CircleDot, title: "GOAL · Kaizer Chiefs", detail: "L. Silva · Penalty" },
 ];
 
 const stats = [
@@ -18,7 +18,7 @@ const stats = [
   { label: "Pass accuracy", home: 88, away: 81, suffix: "%" },
 ];
 
-export function MatchCenterScreen({ motmVote, onVote }) {
+export function MatchCenterScreen({ motmVote, onVote, onNavigate }) {
   const [tab, setTab] = useState("overview");
 
   return (
@@ -34,14 +34,14 @@ export function MatchCenterScreen({ motmVote, onVote }) {
 
       <main>
         <section className="relative overflow-hidden border-b border-white/[.07] px-5 pb-5 pt-6">
-          <img src="/assets/stadium-hero.png" alt="" className="absolute inset-0 h-full w-full object-cover opacity-20" />
+          <img src="/assets/stadium-hero.png" alt="" className="brand-stadium absolute inset-0 h-full w-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-b from-apex-navy/45 to-[var(--app-bg)]" />
           <div className="relative z-10">
             <div className="mb-5 flex items-center justify-center gap-2 text-[9px] font-black uppercase tracking-[.18em] text-red-400"><span className="h-2 w-2 animate-pulse rounded-full bg-red-500" /> 68:12 · Second half</div>
             <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-5 text-center">
-              <div><ClubCrest size={62} className="mx-auto" /><p className="mt-2 text-xs font-black">Apex FC</p></div>
+              <div><ClubCrest size={62} className="mx-auto" /><p className="mt-2 text-xs font-black">Kaizer Chiefs</p></div>
               <div><p className="text-4xl font-black tracking-[-.06em]">2<span className="mx-2 text-white/25">:</span>1</p><p className="mt-1 text-[8px] font-bold uppercase tracking-widest muted-text">Main Stadium</p></div>
-              <div><div className="mx-auto grid h-[62px] w-[62px] place-items-center rounded-[21px] border border-white/10 bg-white/[.05] text-sm font-black">RCF</div><p className="mt-2 text-xs font-black">Rival City</p></div>
+              <div><div className="mx-auto grid h-[62px] w-[62px] place-items-center rounded-[21px] border border-white/10 bg-white/[.05] text-sm font-black">SR</div><p className="mt-2 text-xs font-black">Soweto Rivals</p></div>
             </div>
           </div>
         </section>
@@ -92,7 +92,7 @@ export function MatchCenterScreen({ motmVote, onVote }) {
 
           {tab === "stats" && (
             <section className="surface rounded-[24px] border p-4">
-              <div className="mb-5 flex items-center justify-between text-[10px] font-black"><span className="text-apex-teal">Apex FC</span><span className="muted-text">Rival City</span></div>
+              <div className="mb-5 flex items-center justify-between text-[10px] font-black"><span className="text-apex-teal">Kaizer Chiefs</span><span className="muted-text">Soweto Rivals</span></div>
               <div className="space-y-5">
                 {stats.map((stat) => {
                   const total = stat.home + stat.away;
@@ -119,6 +119,15 @@ export function MatchCenterScreen({ motmVote, onVote }) {
               <button className="flex w-full items-center gap-3 p-4 text-left"><UsersRound size={17} className="text-apex-teal" /><span className="flex-1 text-xs font-extrabold">Starting XI · 4-3-3</span><ChevronRight size={15} className="muted-text" /></button>
             </section>
           )}
+
+          <button onClick={() => onNavigate("tickets")} className="surface flex w-full items-center gap-3 rounded-[20px] border p-3 text-left">
+            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-apex-teal text-apex-navy"><Ticket size={18} /></div>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs font-extrabold">Your match ticket</p>
+              <p className="mt-1 flex items-center gap-1 text-[9px] muted-text"><MapPin size={11} /> Block 114 · Row F · Seat 12</p>
+            </div>
+            <div className="text-right"><span className="rounded-full bg-emerald-500/10 px-2 py-1 text-[8px] font-black text-emerald-400">IN WALLET</span><ChevronRight size={14} className="ml-auto mt-2 muted-text" /></div>
+          </button>
 
           <a href={STADIUM_MANAGEMENT_URL} target="_blank" rel="noreferrer" className="surface flex w-full items-center gap-3 rounded-[20px] border p-3 text-left">
             <div className="grid h-10 w-10 place-items-center rounded-2xl bg-apex-teal/10 text-apex-teal"><Trophy size={17} /></div>

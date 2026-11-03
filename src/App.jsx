@@ -8,12 +8,14 @@ import { HomeScreen } from "./screens/HomeScreen";
 import { MatchCenterScreen } from "./screens/MatchCenterScreen";
 import { MembershipScreen } from "./screens/MembershipScreen";
 import { StoreScreen } from "./screens/StoreScreen";
+import { SupporterMembershipScreen } from "./screens/SupporterMembershipScreen";
 import { TicketsScreen } from "./screens/TicketsScreen";
 
 function PhoneApp({ alternateTheme }) {
   const [screen, setScreen] = useState("home");
   const [bag, setBag] = useState([]);
   const [motmVote, setMotmVote] = useState(null);
+  const [supporterActive, setSupporterActive] = useState(false);
   const [toast, setToast] = useState("");
   const scrollRef = useRef(null);
   const toastTimer = useRef(null);
@@ -50,9 +52,10 @@ function PhoneApp({ alternateTheme }) {
 
   const screens = {
     home: <HomeScreen onNavigate={navigate} onNotify={() => showToast("You’re all caught up — no new alerts")} motmVote={motmVote} onVote={castVote} />,
-    match: <MatchCenterScreen motmVote={motmVote} onVote={castVote} />,
+    match: <MatchCenterScreen motmVote={motmVote} onVote={castVote} onNavigate={navigate} />,
     store: <StoreScreen bag={bag} onAddToBag={addToBag} onClearBag={() => setBag([])} onToast={showToast} />,
     tickets: <TicketsScreen onToast={showToast} />,
+    join: <SupporterMembershipScreen active={supporterActive} onActivate={() => setSupporterActive(true)} onNavigate={navigate} onToast={showToast} />,
     ai: <AIAssistantScreen onNavigate={navigate} />,
     membership: <MembershipScreen onBack={() => navigate("home")} onNavigate={navigate} />,
   };
@@ -66,7 +69,7 @@ function PhoneApp({ alternateTheme }) {
       </div>
 
       {toast && (
-        <div className="absolute inset-x-4 bottom-[92px] z-[70] flex animate-screen-in items-center gap-2 rounded-2xl border border-apex-teal/20 bg-[#102A43]/95 px-4 py-3 text-[10px] font-bold text-white shadow-2xl backdrop-blur-xl">
+        <div className="absolute inset-x-4 bottom-[92px] z-[70] flex animate-screen-in items-center gap-2 rounded-2xl border border-apex-teal/20 bg-[#111111]/95 px-4 py-3 text-[10px] font-bold text-white shadow-2xl backdrop-blur-xl">
           <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-apex-teal text-apex-navy"><Check size={12} strokeWidth={3} /></span>
           {toast}
         </div>
@@ -80,7 +83,7 @@ function PhoneApp({ alternateTheme }) {
 function DesktopControls({ onReset, alternateTheme, onTheme, onGuide }) {
   const controls = [
     { label: "Reset Demo", detail: "Return every flow to its starting state", icon: RotateCcw, action: onReset },
-    { label: "Switch Theme", detail: alternateTheme ? "Currently ocean blue" : "Currently royal blue", icon: alternateTheme ? Sun : Moon, action: onTheme },
+    { label: "Switch Theme", detail: alternateTheme ? "Currently warm gold" : "Currently heritage gold", icon: alternateTheme ? Sun : Moon, action: onTheme },
     { label: "Feature Guide", detail: "Explore the prototype capabilities", icon: BookOpen, action: onGuide },
   ];
 
@@ -89,8 +92,8 @@ function DesktopControls({ onReset, alternateTheme, onTheme, onGuide }) {
       <div className="mb-8 flex items-center gap-3">
         <ClubCrest size={50} />
         <div>
-          <p className="text-[10px] font-black uppercase tracking-[.22em] text-apex-teal">Apex FC</p>
-          <p className="mt-1 text-xs font-bold text-white/50">Digital experience lab</p>
+          <p className="text-[10px] font-black uppercase tracking-[.22em] text-apex-teal">Kaizer Chiefs</p>
+          <p className="mt-1 text-xs font-bold text-white/50">Supporter experience concept</p>
         </div>
       </div>
       <p className="mb-3 text-[9px] font-black uppercase tracking-[.2em] text-white/30">Demo controls</p>
@@ -110,9 +113,9 @@ function DesktopControls({ onReset, alternateTheme, onTheme, onGuide }) {
 function DesktopFeatureRail() {
   return (
     <aside className="absolute right-10 top-1/2 hidden w-[245px] -translate-y-1/2 xl:block 2xl:right-16">
-      <p className="text-[9px] font-black uppercase tracking-[.2em] text-apex-teal">White-label platform</p>
-      <h2 className="mt-3 text-[28px] font-black leading-[1.02] tracking-[-.045em] text-white">Every fan touchpoint. One premium app.</h2>
-      <p className="mt-4 text-[10px] leading-relaxed text-white/40">A fully interactive concept for identity, matchday, retail and club intelligence.</p>
+      <p className="text-[9px] font-black uppercase tracking-[.2em] text-apex-teal">Khosi digital membership</p>
+      <h2 className="mt-3 text-[28px] font-black leading-[1.02] tracking-[-.045em] text-white">Turn supporter passion into year-round belonging.</h2>
+      <p className="mt-4 text-[10px] leading-relaxed text-white/40">A fully interactive concept for annual membership, identity, matchday, retail and club intelligence.</p>
       <div className="mt-7 space-y-4">
         {featureGuide.map((feature, index) => (
           <div key={feature.label} className="flex gap-3">
@@ -143,7 +146,7 @@ function FeatureGuideDialog({ onClose }) {
             </div>
           ))}
         </div>
-        <p className="mt-5 flex items-center gap-2 text-[9px] font-bold text-white/35"><Smartphone size={13} className="text-apex-teal" /> Use the five-tab navigation inside the device to move between core flows.</p>
+        <p className="mt-5 flex items-center gap-2 text-[9px] font-bold text-white/35"><Smartphone size={13} className="text-apex-teal" /> Use the navigation inside the device to move between every supporter flow.</p>
       </section>
     </div>
   );
@@ -160,14 +163,14 @@ export default function App() {
         <div className="absolute left-[12%] top-[8%] h-64 w-64 rounded-full bg-apex-teal/[.06] blur-[100px]" />
         <div className="absolute bottom-[-8%] right-[10%] h-96 w-96 rounded-full bg-apex-teal/[.055] blur-[130px]" />
         <div className="desktop-grid absolute inset-0 opacity-30" />
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none text-[24vw] font-black tracking-[-.1em] text-white/[.018]">APEX</div>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none text-[18vw] font-black tracking-[-.08em] text-white/[.018]">KHOSI</div>
       </div>
 
       <DesktopControls onReset={() => setDemoKey((key) => key + 1)} alternateTheme={alternateTheme} onTheme={() => setAlternateTheme((value) => !value)} onGuide={() => setGuideOpen(true)} />
 
       <div className="relative z-10">
         <div className="device-label absolute -top-5 left-1/2 hidden -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-apex-navy/70 px-3 py-1 text-[8px] font-black uppercase tracking-[.16em] text-white/45 backdrop-blur md:flex"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Interactive prototype</div>
-        <div className="phone-frame relative overflow-hidden border-[7px] border-[#163B63] bg-apex-navy shadow-phone">
+        <div className="phone-frame relative overflow-hidden border-[7px] border-[#2A2419] bg-apex-navy shadow-phone">
           <div className="device-island absolute left-1/2 top-2 z-[90] h-[25px] w-[104px] -translate-x-1/2 rounded-full border border-white/[.05] bg-apex-navy shadow-xl">
             <span className="absolute right-3 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#172848] shadow-[0_0_5px_#436292]" />
           </div>
@@ -177,7 +180,7 @@ export default function App() {
 
       <DesktopFeatureRail />
 
-      <p className="absolute bottom-4 hidden text-[8px] font-bold uppercase tracking-[.2em] text-white/20 md:block">Apex FC · White-label digital club platform · 100% frontend prototype</p>
+      <p className="absolute bottom-4 hidden text-[8px] font-bold uppercase tracking-[.2em] text-white/20 md:block">Kaizer Chiefs · Supporter membership concept · 100% frontend prototype</p>
       {guideOpen && <FeatureGuideDialog onClose={() => setGuideOpen(false)} />}
     </main>
   );

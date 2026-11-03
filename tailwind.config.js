@@ -5,17 +5,17 @@ module.exports = {
     extend: {
       colors: {
         apex: {
-          primary: "#2563EB",
-          teal: "#2DD4BF",
-          navy: "#0B1736",
-          royal: "#1746A2",
-          mist: "#EAF2FF",
+          primary: "#D89400",
+          teal: "#FFB612",
+          navy: "#090909",
+          royal: "#1A1A1A",
+          mist: "#FFF4D1",
           white: "#FFFFFF",
         },
       },
       boxShadow: {
-        phone: "0 42px 90px rgba(3,10,30,.62), 0 0 0 1px rgba(255,255,255,.1)",
-        teal: "0 16px 40px rgba(45,212,191,.22)",
+        phone: "0 42px 90px rgba(0,0,0,.72), 0 0 0 1px rgba(255,182,18,.12)",
+        teal: "0 16px 40px rgba(255,182,18,.2)",
       },
       keyframes: {
         screenIn: {

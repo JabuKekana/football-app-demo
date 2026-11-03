@@ -1,11 +1,11 @@
 import React from "react";
-import { Bot, Home, ShoppingBag, Ticket, Trophy } from "lucide-react";
+import { Bot, Home, ShoppingBag, Trophy, UsersRound } from "lucide-react";
 
 const items = [
   { id: "home", label: "Home", icon: Home },
   { id: "match", label: "Match", icon: Trophy },
   { id: "store", label: "Store", icon: ShoppingBag },
-  { id: "tickets", label: "Tickets", icon: Ticket },
+  { id: "join", label: "Join", icon: UsersRound },
   { id: "ai", label: "Assistant", icon: Bot },
 ];
 
@@ -18,11 +18,11 @@ export function BottomNav({ active, onNavigate, bagCount }) {
           <button
             key={id}
             onClick={() => onNavigate(id)}
-            className={`group relative flex min-w-[60px] flex-col items-center gap-1 rounded-2xl px-2 py-1.5 transition ${selected ? "text-apex-teal" : "text-white/45 hover:text-white/80"}`}
+            className={`group relative flex min-w-0 flex-1 flex-col items-center gap-1 rounded-2xl px-1 py-1.5 transition ${selected ? "text-apex-teal" : "text-white/45 hover:text-white/80"}`}
             aria-label={label}
             aria-current={selected ? "page" : undefined}
           >
-            {selected && <span className="absolute -top-2 h-0.5 w-5 rounded-full bg-apex-teal shadow-[0_0_12px_#2DD4BF]" />}
+            {selected && <span className="absolute -top-2 h-0.5 w-5 rounded-full bg-apex-teal shadow-[0_0_12px_#FFB612]" />}
             <span className={`relative grid h-7 w-7 place-items-center transition ${selected ? "-translate-y-0.5" : ""}`}>
               <Icon size={20} strokeWidth={selected ? 2.5 : 1.8} />
               {id === "store" && bagCount > 0 && (

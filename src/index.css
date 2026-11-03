@@ -5,7 +5,7 @@
 :root {
   color-scheme: dark;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #07132e;
+  background: #070707;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,7 +24,7 @@ body,
 
 body {
   min-width: 320px;
-  background: #07132e;
+  background: #070707;
 }
 
 button,
@@ -38,15 +38,15 @@ button {
 
 .desktop-stage {
   background:
-    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, .25), transparent 38%),
-    linear-gradient(135deg, #07132e 0%, #0b214a 52%, #07132e 100%);
+    radial-gradient(circle at 50% 45%, rgba(255, 182, 18, .16), transparent 38%),
+    linear-gradient(135deg, #050505 0%, #17130b 52%, #050505 100%);
   transition: background .45s ease;
 }
 
 .desktop-stage.desk-alt {
   background:
-    radial-gradient(circle at 50% 45%, rgba(45, 212, 191, .23), transparent 38%),
-    linear-gradient(135deg, #081b35 0%, #10436c 52%, #081b35 100%);
+    radial-gradient(circle at 50% 45%, rgba(255, 204, 77, .2), transparent 38%),
+    linear-gradient(135deg, #090909 0%, #2a210d 52%, #090909 100%);
 }
 
 .desktop-grid {
@@ -54,7 +54,7 @@ button {
     linear-gradient(rgba(255,255,255,.024) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.024) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: radial-gradient(circle at center, #0b1736, transparent 78%);
+  mask-image: radial-gradient(circle at center, #111111, transparent 78%);
 }
 
 .phone-frame {
@@ -64,24 +64,24 @@ button {
 }
 
 .phone-app {
-  --app-bg: #0b1736;
-  --surface: #122a4d;
-  --surface-soft: rgba(45, 212, 191, .055);
-  --border: rgba(168, 203, 255, .13);
-  --muted: rgba(220, 234, 255, .55);
-  --header: rgba(11, 23, 54, .88);
+  --app-bg: #090909;
+  --surface: #151515;
+  --surface-soft: rgba(255, 182, 18, .055);
+  --border: rgba(255, 214, 122, .13);
+  --muted: rgba(255, 244, 214, .56);
+  --header: rgba(9, 9, 9, .9);
   background: var(--app-bg);
   color: white;
   border-radius: 47px;
 }
 
 .phone-app.app-alt {
-  --app-bg: #102a43;
-  --surface: #163b63;
-  --surface-soft: rgba(45, 212, 191, .07);
-  --border: rgba(45, 212, 191, .17);
-  --muted: rgba(225, 246, 255, .58);
-  --header: rgba(16, 42, 67, .9);
+  --app-bg: #161109;
+  --surface: #211a0f;
+  --surface-soft: rgba(255, 182, 18, .07);
+  --border: rgba(255, 182, 18, .17);
+  --muted: rgba(255, 244, 214, .58);
+  --header: rgba(22, 17, 9, .92);
 }
 
 .screen-bg {
@@ -110,7 +110,7 @@ button {
   align-items: center;
   gap: 12px;
   min-height: 73px;
-  padding: 22px 20px 11px;
+  padding: 28px 20px 11px;
   border-bottom: 1px solid var(--border);
   background: var(--header);
   backdrop-filter: blur(18px);
@@ -119,11 +119,11 @@ button {
 .bottom-nav {
   min-height: 78px;
   border-color: var(--border);
-  background: rgba(7, 19, 46, .9);
+  background: rgba(5, 5, 5, .92);
 }
 
 .app-alt .bottom-nav {
-  background: rgba(16, 42, 67, .9);
+  background: rgba(22, 17, 9, .92);
 }
 
 @layer components {
@@ -136,7 +136,7 @@ button {
   }
 
   .primary-button {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-apex-teal px-4 py-3 text-[11px] font-black text-apex-navy shadow-[0_10px_30px_rgba(45,212,191,.2)] transition hover:-translate-y-0.5 hover:bg-[#5eead4] active:translate-y-0;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-apex-teal px-4 py-3 text-[11px] font-black text-apex-navy shadow-[0_10px_30px_rgba(255,182,18,.2)] transition hover:-translate-y-0.5 hover:bg-[#FFC642] active:translate-y-0;
   }
 
   .secondary-button {
@@ -166,8 +166,8 @@ button {
 
 .member-card {
   background:
-    radial-gradient(circle at 15% 15%, rgba(255,255,255,.45), transparent 18%),
-    linear-gradient(125deg, #123a8d 0%, #2563eb 28%, #2dd4bf 52%, #1746a2 72%, #2563eb 100%);
+    radial-gradient(circle at 15% 15%, rgba(255,255,255,.28), transparent 18%),
+    linear-gradient(125deg, #171717 0%, #2d2107 28%, #ffb612 52%, #5a3a00 72%, #111111 100%);
 }
 
 .member-card::after {
@@ -204,8 +204,25 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 85% 30%, rgba(45,212,191,.2), transparent 38%);
+  background: radial-gradient(circle at 85% 30%, rgba(255,182,18,.22), transparent 38%);
   pointer-events: none;
+}
+
+.membership-hero {
+  background:
+    radial-gradient(circle at 84% 38%, rgba(255,182,18,.22), transparent 34%),
+    linear-gradient(145deg, #161616 0%, #080808 58%, #261a05 100%);
+}
+
+.membership-success {
+  background:
+    radial-gradient(circle at 88% 14%, rgba(255,182,18,.28), transparent 30%),
+    linear-gradient(135deg, #191919 0%, #0a0a0a 58%, #3a2706 100%);
+}
+
+.brand-stadium,
+.brand-editorial {
+  filter: grayscale(.25) sepia(.8) saturate(1.45) hue-rotate(350deg) brightness(.8) contrast(1.08);
 }
 
 .football-pitch {
@@ -240,7 +257,7 @@ button {
     display: block;
     min-height: 100dvh;
     padding: 0;
-    background: #0b1736;
+    background: #090909;
   }
 
   .phone-frame {

@@ -8,7 +8,7 @@ export function AIAssistantScreen({ onNavigate }) {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "Hi Kabelo — I’m Apex AI. Ask me about fixtures, tickets, membership, or the official store.",
+      content: "Sawubona Kabelo — I’m Khosi AI. Ask me about fixtures, tickets, annual membership, or the club store.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -41,8 +41,8 @@ export function AIAssistantScreen({ onNavigate }) {
           role: "assistant",
           content:
             promptResponses[cleaned] ||
-            "I can help with that. For this prototype, try asking me about the next derby, the home kit, or upgrading your membership.",
-          action: cleaned.includes("home kit") ? "store" : cleaned.includes("VIP") ? "membership" : cleaned.includes("match tickets") ? "ticketing" : null,
+            "I can help with that. For this prototype, try asking me about the next derby, the home kit, or the R250 annual supporter membership.",
+          action: cleaned.includes("home kit") ? "store" : cleaned.includes("R250") ? "join" : cleaned.includes("match tickets") ? "ticketing" : null,
         },
       ]);
       setTyping(false);
@@ -57,7 +57,7 @@ export function AIAssistantScreen({ onNavigate }) {
           <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-apex-navy" />
         </div>
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-1.5"><h1 className="text-sm font-extrabold">Apex AI</h1><CheckCircle2 size={13} className="text-apex-teal" /></div>
+          <div className="flex items-center gap-1.5"><h1 className="text-sm font-extrabold">Khosi AI</h1><CheckCircle2 size={13} className="text-apex-teal" /></div>
           <p className="mt-0.5 text-[9px] font-bold text-emerald-400">Online · Answers instantly</p>
         </div>
         <div className="rounded-full border border-apex-teal/20 bg-apex-teal/10 px-2.5 py-1.5 text-[8px] font-black uppercase tracking-wider text-apex-teal">Club official</div>
@@ -89,7 +89,7 @@ export function AIAssistantScreen({ onNavigate }) {
                   </a>
                 ) : message.action && (
                   <button onClick={() => onNavigate(message.action)} className={`mt-3 text-[9px] font-black uppercase tracking-wide ${message.role === "user" ? "text-apex-navy" : "text-apex-teal"}`}>
-                    Open {message.action === "store" ? "official store" : "digital ID"} →
+                    Open {message.action === "store" ? "club store" : "annual membership"} →
                   </button>
                 )}
               </div>
@@ -113,9 +113,9 @@ export function AIAssistantScreen({ onNavigate }) {
         <input
           value={input}
           onChange={(event) => setInput(event.target.value)}
-          placeholder="Ask Apex AI anything…"
+          placeholder="Ask Khosi AI anything…"
           className="min-w-0 flex-1 bg-transparent text-[11px] font-medium text-white outline-none placeholder:text-white/35"
-          aria-label="Message Apex AI"
+          aria-label="Message Khosi AI"
         />
         <button type="submit" disabled={!input.trim() || typing} className="grid h-10 w-10 place-items-center rounded-2xl bg-apex-teal text-apex-navy transition disabled:opacity-35" aria-label="Send message">
           <Send size={16} />
