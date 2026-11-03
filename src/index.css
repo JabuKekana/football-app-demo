@@ -1,13 +1,289 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #07132e;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #07132e;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.desktop-stage {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, .25), transparent 38%),
+    linear-gradient(135deg, #07132e 0%, #0b214a 52%, #07132e 100%);
+  transition: background .45s ease;
+}
+
+.desktop-stage.desk-alt {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(45, 212, 191, .23), transparent 38%),
+    linear-gradient(135deg, #081b35 0%, #10436c 52%, #081b35 100%);
+}
+
+.desktop-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.024) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, #0b1736, transparent 78%);
+}
+
+.phone-frame {
+  width: 410px;
+  height: min(844px, calc(100dvh - 48px));
+  border-radius: 54px;
+}
+
+.phone-app {
+  --app-bg: #0b1736;
+  --surface: #122a4d;
+  --surface-soft: rgba(45, 212, 191, .055);
+  --border: rgba(168, 203, 255, .13);
+  --muted: rgba(220, 234, 255, .55);
+  --header: rgba(11, 23, 54, .88);
+  background: var(--app-bg);
+  color: white;
+  border-radius: 47px;
+}
+
+.phone-app.app-alt {
+  --app-bg: #102a43;
+  --surface: #163b63;
+  --surface-soft: rgba(45, 212, 191, .07);
+  --border: rgba(45, 212, 191, .17);
+  --muted: rgba(225, 246, 255, .58);
+  --header: rgba(16, 42, 67, .9);
+}
+
+.screen-bg {
+  background: var(--app-bg);
+  color: white;
+}
+
+.surface {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.surface-soft {
+  background: var(--surface-soft);
+}
+
+.muted-text {
+  color: var(--muted);
+}
+
+.screen-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 73px;
+  padding: 22px 20px 11px;
+  border-bottom: 1px solid var(--border);
+  background: var(--header);
+  backdrop-filter: blur(18px);
+}
+
+.bottom-nav {
+  min-height: 78px;
+  border-color: var(--border);
+  background: rgba(7, 19, 46, .9);
+}
+
+.app-alt .bottom-nav {
+  background: rgba(16, 42, 67, .9);
+}
+
+@layer components {
+  .icon-button {
+    @apply grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-white/[.07] bg-white/[.045] text-white/65 transition hover:border-apex-teal/30 hover:text-apex-teal;
+  }
+
+  .avatar-button {
+    @apply grid h-10 w-10 shrink-0 place-items-center rounded-full border border-apex-teal/25 bg-apex-teal/10 text-apex-teal transition hover:bg-apex-teal hover:text-apex-navy;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-apex-teal px-4 py-3 text-[11px] font-black text-apex-navy shadow-[0_10px_30px_rgba(45,212,191,.2)] transition hover:-translate-y-0.5 hover:bg-[#5eead4] active:translate-y-0;
+  }
+
+  .secondary-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-[11px] font-black text-emerald-400 transition;
+  }
+
+  .choice-button {
+    @apply rounded-xl border border-white/[.08] bg-white/[.035] px-2 py-2.5 text-[9px] font-black transition hover:border-apex-teal/40 hover:bg-apex-teal/10 hover:text-apex-teal;
+  }
+
+  .quick-action {
+    @apply flex min-h-[92px] flex-col items-center justify-center gap-2 rounded-[20px] border border-white/[.07] bg-white/[.035] px-1 py-3 text-center text-[9px] font-bold leading-tight text-white/70 transition hover:border-apex-teal/25;
+  }
+
+  .section-kicker {
+    @apply text-[8px] font-black uppercase tracking-[.18em] text-apex-teal;
+  }
+
+  .section-title {
+    @apply mt-1 text-base font-extrabold tracking-[-.02em];
+  }
+}
+
+.hero-card {
+  min-height: 400px;
+}
+
+.member-card {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255,255,255,.45), transparent 18%),
+    linear-gradient(125deg, #123a8d 0%, #2563eb 28%, #2dd4bf 52%, #1746a2 72%, #2563eb 100%);
+}
+
+.member-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .18;
+  background-image: repeating-linear-gradient(115deg, transparent 0 12px, rgba(3,10,30,.18) 12px 13px);
+}
+
+.ticket-perforation::before,
+.ticket-perforation::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--app-bg);
+}
+
+.ticket-perforation::before {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.ticket-perforation::after {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.store-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 30%, rgba(45,212,191,.2), transparent 38%);
+  pointer-events: none;
+}
+
+.football-pitch {
+  background-image:
+    linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 11%, transparent 11% 22%);
+  background-size: 100% 50%, 100% 100%;
+}
+
+.hide-scrollbar,
+.app-scroll {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar,
+.app-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .phone-frame {
+    width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow: hidden;
+  }
+
+  .desktop-stage {
+    display: block;
+    min-height: 100dvh;
+    padding: 0;
+    background: #0b1736;
+  }
+
+  .phone-frame {
+    width: 100vw;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .phone-app {
+    border-radius: 0;
+  }
+
+  .device-island,
+  .device-label {
+    display: none;
+  }
+
+  .screen-header {
+    padding-top: max(18px, env(safe-area-inset-top));
+  }
+}
+
+@media (max-height: 720px) and (min-width: 768px) {
+  .phone-frame {
+    width: 340px;
+    height: calc(100dvh - 28px);
+    border-radius: 45px;
+  }
+
+  .phone-app {
+    border-radius: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }

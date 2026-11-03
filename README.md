@@ -1,34 +1,36 @@
-# React JS Landing Page Template
+# football-app-demo
 
-**
+A premium, white-label football club experience for the web. The prototype presents Apex Football Club across membership, live matchday, merchandise, mobile tickets, and an in-app AI assistant.
 
-# 🛎️🛎️ Good news! New & improved [V2](https://github.com/issaafalkattan/react-landing-page-template-2021) is out  
+## What is included
 
-**
+- Responsive desktop presentation with a realistic mobile device frame
+- Full-viewport mobile experience without the mock device chrome
+- Home feed, live Match Centre, digital fan ID, official store, ticket wallet, and AI assistant
+- Interactive voting, product options, bag, one-tap checkout, ticket wallet, official ticketing hand-off, and sample AI conversations
+- Local React state only—no backend services or external runtime APIs
+- Tailwind CSS, Lucide React icons, and client-rendered QR codes
 
+## Local development
 
-### <a href="https://react-landing-page-template-93ne.vercel.app/">LIVE DEMO</a> 
+```bash
+npm install
+npm start
+```
 
-## Description
-This is a ReactJS based landing page template, fit for a startup company/service with a one page view. The design is inspired by a template from <a href="https://www.free-css.com/assets/files/free-css-templates/preview/page234/interact/">Free-CSS.com </a>
-All 'visual' data can be easily modified by changing the data.json file.
+The app runs at `http://localhost:3000`.
 
-## Make it Yours!
-### 1. Preps
-You will need to have <a href="https://nodejs.org/">Node JS</a> installed on your pc. 
+## Production build
 
-### 2. Clone Files
-After cloning the files, you will have to run ```yarn``` followed by ```yarn start``` in the CLI
-### 3. Add your own data 
-Change the data in the ```data.json``` file as well as add any images to ```public/img/```
-You can also change styles by modifying the ```public/css``` files.
-If you need the contact form to work, you also need to create an EmailJS account, and modify the ```src/components/contact.jsx``` file to replace your own service ID, template ID and Public Key
+```bash
+npm run build
+```
 
-## Like this project?
-<a href="https://www.buymeacoffee.com/issaaf">Buy my a coffee ☕️</a>
+The optimized static output is written to `dist/`. `vercel.json` is configured for direct Vercel deployment.
 
-## Credits
-##### Free CSS 
-<a href="https://www.free-css.com/assets/files/free-css-templates/preview/page234/interact/">Free-CSS.com </a>
+## Customising the white-label experience
 
-##### Issaaf kattan
+- Club content and demo data: `src/data/demoData.js`
+- Brand palette and responsive presentation: `src/index.css` and `tailwind.config.js`
+- Generated editorial and product imagery: `public/assets/`
+- Screen-level components: `src/screens/`
